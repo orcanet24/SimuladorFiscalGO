@@ -1,0 +1,24 @@
+{"scenario": "bixolon", "i": 0, "command": "@Status", "response": "@Response|OK|0|Status: 0x04|Error: 0x00|Doc: CERRADO|Ventas: 0.00"}
+{"scenario": "bixolon", "i": 1, "command": "@OpenFiscalReceipt", "response": "@Response|OK|0|Documento fiscal abierto"}
+{"scenario": "bixolon", "i": 2, "command": "@CustomerData|J-12345678-9|EMPRESA C.A.|Av Principal", "response": "@Response|OK|0|Cliente J-12345678-9 EMPRESA C.A."}
+{"scenario": "bixolon", "i": 3, "command": "@PrintLine|CAFE|2|15.00|general", "response": "@Response|OK|0|CAFE|2.000|15.00|30.00"}
+{"scenario": "bixolon", "i": 4, "command": "@PrintLine|PAN|3|8.00|reduced", "response": "@Response|OK|0|PAN|3.000|8.00|24.00"}
+{"scenario": "bixolon", "i": 5, "command": "@PrintLine|ARROZ|1|5.00|exento", "response": "@Response|OK|0|ARROZ|1.000|5.00|5.00"}
+{"scenario": "bixolon", "i": 6, "command": "@Subtotal", "response": "@Response|OK|0|Subtotal: 53.08+IVA:5.92"}
+{"scenario": "bixolon", "i": 7, "command": "@AddPayment|54.00|cash", "response": "@Response|OK|0|Pago: 54.00|Pendiente: 5.00"}
+{"scenario": "bixolon", "i": 8, "command": "@Close", "response": "@Response|OK|0|Factura 1 cerrada|Total: 59.00|Impreso:1"}
+{"scenario": "bixolon", "i": 9, "command": "@PrintXReport", "response": "@Response|OK|0|Reporte X #1|Ventas: 59.00|Impreso:2"}
+{"scenario": "bixolon", "i": 10, "command": "@PrintZReport", "response": "@Response|OK|0|Reporte Z #1|Ventas: 59.00|Impreso:3"}
+{"scenario": "bixolon", "i": 11, "command": "@OpenCreditNote", "response": "@Response|OK|0|Nota de credito abierta"}
+{"scenario": "bixolon", "i": 12, "command": "@PrintLine|NC ITEM|1|10.00|general", "response": "@Response|OK|0|NC ITEM|1.000|10.00|10.00"}
+{"scenario": "bixolon", "i": 13, "command": "@Close", "response": "@Response|OK|0|Nota de Credito 1 cerrada|Total: 10.00|Impreso:4"}
+{"scenario": "bixolon", "i": 14, "command": "@OpenDebitNote", "response": "@Response|OK|0|Nota de debito abierta"}
+{"scenario": "bixolon", "i": 15, "command": "@PrintLine|ND ITEM|1|10.00|general", "response": "@Response|OK|0|ND ITEM|1.000|10.00|10.00"}
+{"scenario": "bixolon", "i": 16, "command": "@Close", "response": "@Response|OK|0|Nota de Debito 1 cerrada|Total: 10.00|Impreso:5"}
+{"scenario": "bixolon", "i": 17, "command": "@OpenNonFiscalDoc", "response": "@Response|OK|0|Documento no fiscal abierto"}
+{"scenario": "bixolon", "i": 18, "command": "@PrintNonFiscalText|nota", "response": "@Response|OK|0|No fiscal: nota"}
+{"scenario": "bixolon", "i": 19, "command": "@CloseNonFiscalDoc", "response": "@Response|OK|0|DNF cerrado"}
+{"scenario": "bixolon", "i": 20, "command": "@OpenDrawer", "response": "@Response|OK|0|Gaveta 1 abierta"}
+{"scenario": "bixolon", "i": 21, "command": "@PrintLineItem|OTRO|1|10.00|1|M", "response": "@Response|OK|0|OTRO|1.000|10.00|10.00"}
+{"scenario": "bixolon", "i": 22, "command": "@UnknownCommand|x", "response": "@Response|Error|0x50|Comando desconocido"}
+{"scenario": "bixolon", "i": 23, "command": "", "response": "ERROR|0x50|Comando desconocido"}

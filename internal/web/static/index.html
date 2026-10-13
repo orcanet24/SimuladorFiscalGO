@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SimuladorFiscalGO — Panel de Impresora Fiscal</title>
+<style>
+:root{
+  --bg:#0d1117; --panel:#161b22; --panel2:#1c2330; --border:#30363d;
+  --txt:#e6edf3; --muted:#8b949e; --accent:#2f81f7; --green:#3fb950;
+  --red:#f85149; --amber:#d29922; --paper:#fdfdf7; --paper-ink:#1a1a1a;
+  --mono:"Cascadia Code","SF Mono",Consolas,"Courier New",monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:var(--bg); color:var(--txt); font-size:14px;
+  display:flex; flex-direction:column; overflow:hidden;
+}
+/* ---------- header ---------- */
+header{
+  display:flex; align-items:center; gap:16px;
+  padding:10px 18px; background:var(--panel);
+  border-bottom:1px solid var(--border); flex:0 0 auto;
+}
+.logo{font-weight:700;font-size:16px;letter-spacing:.3px}
+.logo span{color:var(--accent)}
+.brand-tabs{display:flex;gap:6px}
+.brand-tabs button{
+  background:var(--panel2);color:var(--muted);border:1px solid var(--border);
+  padding:6px 14px;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;
+  transition:.15s;
+}
+.brand-tabs button.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.brand-tabs button:hover:not(.active){color:var(--txt);border-color:var(--muted)}
+.status-pill{
+  margin-left:auto;display:flex;gap:14px;align-items:center;
+  font-family:var(--mono);font-size:12px;color:var(--muted);
+}
+.status-pill b{color:var(--txt);font-weight:600}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--green);margin-right:5px}
+.dot.err{background:var(--red)} .dot.warn{background:var(--amber)}
+/* ---------- layout ---------- */
+main{flex:1;display:grid;grid-template-columns:430px 1fr;min-height:0}
+/* ---------- paper side ---------- */
+.paper-side{
+  background:#0a0d12;border-right:1px solid var(--border);
+  display:flex;flex-direction:column;min-height:0;
+}
+.paper-head{
+  display:flex;align-items:center;gap:8px;padding:10px 14px;
+  border-bottom:1px solid var(--border);flex:0 0 auto;
+}
+.paper-head h2{font-size:13px;text-transform:uppercase;letter-spacing:.8px;color:var(--muted)}
+.paper-head select{
+  margin-left:auto;background:var(--panel2);color:var(--txt);
+  border:1px solid var(--border);border-radius:6px;padding:5px 8px;font-size:12px;max-width:190px;
+}
+.paper-wrap{flex:1;overflow-y:auto;padding:22px 26px 40px;min-height:0}
+.paper{
+  background:var(--paper);color:var(--paper-ink);
+  font-family:var(--mono);font-size:12.5px;line-height:1.42;
+  padding:20px 16px 30px;border-radius:3px;
+  box-shadow:0 8px 30px rgba(0,0,0,.55),0 0 0 1px #000;
+  white-space:pre;overflow-x:auto;position:relative;
+  min-height:180px;
+}
+.paper::before,.paper::after{
+  content:"";position:absolute;left:0;right:0;height:8px;
+  background:repeating-linear-gradient(90deg,var(--paper) 0 8px,transparent 8px 16px);
+}
+.paper::before{top:-7px;transform:scaleY(-1)}
+.paper::after{bottom:-7px}
+.paper .live-tag{
+  position:absolute;top:8px;right:10px;font-size:9px;letter-spacing:1px;
+  color:#b00;background:none;font-weight:700;
+}
+.paper-empty{color:#999;font-style:italic}
+/* ---------- right side ---------- */
+.control-side{display:flex;flex-direction:column;min-height:0;overflow-y:auto}
+.cards{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:10px;padding:14px 16px 4px;
+}
+.card{
+  background:var(--panel);border:1px solid var(--border);border-radius:8px;
+  padding:10px 12px;
+}
+.card .label{font-size:10.5px;text-transform:uppercase;letter-spacing:.7px;color:var(--muted)}
+.card .value{font-size:20px;font-weight:700;font-family:var(--mono);margin-top:3px}
+.card .value small{font-size:12px;color:var(--muted);font-weight:500}
+.card.hl .value{color:var(--green)}
+.card.warn .value{color:var(--amber)}
+.section{
+  background:var(--panel);border:1px solid var(--border);border-radius:10px;
+  margin:12px 16px;overflow:hidden;
+}
+.section > h3{
+  font-size:12px;text-transform:uppercase;letter-spacing:.9px;color:var(--muted);
+  padding:11px 14px;border-bottom:1px solid var(--border);
+  display:flex;align-items:center;gap:8px;
+}
+.section .body{padding:14px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+label.f{display:block;font-size:11px;color:var(--muted);margin-bottom:4px}
+input,select,textarea{
+  width:100%;background:var(--panel2);color:var(--txt);
+  border:1px solid var(--border);border-radius:6px;padding:8px 10px;
+  font-size:13px;font-family:inherit;
+}
+input:focus,select:focus{outline:none;border-color:var(--accent)}
+.btn{
+  background:var(--panel2);color:var(--txt);border:1px solid var(--border);
+  border-radius:7px;padding:9px 14px;font-size:13px;font-weight:600;
+  cursor:pointer;transition:.15s;
+}
+.btn:hover{border-color:var(--muted);background:#232b3a}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.primary:hover{background:#4593f8}
+.btn.green{background:#238636;border-color:#238636;color:#fff}
+.btn.green:hover{background:#2ea043}
+.btn.red{background:#21262d;border-color:#f85149;color:#f85149}
+.btn.red:hover{background:#f85149;color:#fff}
+.btn.amber{background:#21262d;border-color:#d29922;color:#d29922}
+.btn.amber:hover{background:#d29922;color:#000}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+/* tax chips */
+.tax-chips{display:flex;gap:6px}
+.tax-chips label{
+  flex:1;text-align:center;background:var(--panel2);border:1px solid var(--border);
+  border-radius:6px;padding:7px 4px;font-size:12px;cursor:pointer;transition:.15s;
+}
+.tax-chips input{display:none}
+.tax-chips input:checked + span{color:#fff}
+.tax-chips label:has(input:checked){background:var(--accent);border-color:var(--accent)}
+/* ---------- log ---------- */
+.log{max-height:320px;overflow-y:auto;font-family:var(--mono);font-size:12px}
+.log-row{
+  display:grid;grid-template-columns:52px 1fr;gap:8px;
+  padding:6px 10px;border-bottom:1px solid #21262d;align-items:start;
+}
+.log-row .seq{color:var(--muted)}
+.log-row .cmd{color:var(--accent);word-break:break-all}
+.log-row .rsp{color:var(--green);word-break:break-all;display:block;margin-top:2px}
+.log-row.err .rsp{color:var(--red)}
+.log-row .ts{color:#484f58;font-size:10px;display:block;margin-top:1px}
+/* raw console */
+.raw-line{display:flex;gap:8px;margin-top:4px}
+.raw-line input{font-family:var(--mono)}
+.raw-line .btn{flex:0 0 auto}
+.hint{font-size:11.5px;color:var(--muted);margin-top:8px;line-height:1.5}
+.hint code{background:var(--panel2);padding:1px 5px;border-radius:4px;font-family:var(--mono);font-size:11px}
+.toast{
+  position:fixed;bottom:20px;right:20px;background:var(--panel2);
+  border:1px solid var(--accent);border-radius:8px;padding:11px 16px;
+  font-size:13px;box-shadow:0 6px 24px rgba(0,0,0,.5);
+  transform:translateY(80px);opacity:0;transition:.25s;pointer-events:none;z-index:50;
+}
+.toast.show{transform:translateY(0);opacity:1}
+.toast.err{border-color:var(--red)}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-thumb{background:#30363d;border-radius:6px}
+::-webkit-scrollbar-track{background:transparent}
+/* ---------- responsive: laptop 15" -> movil ---------- */
+/* Las secciones del lado de control nunca se comprimen: el contenedor hace
+   scroll en vez de recortar el formulario (bug de flex-shrink). */
+.control-side > *{flex:0 0 auto}
+.control-side{min-width:0}
+@media (max-width:1440px){
+  main{grid-template-columns:400px 1fr}
+  header{gap:12px;padding:9px 14px}
+  .cards{gap:8px;padding:12px 12px 4px}
+  .card{padding:9px 10px}
+  .card .value{font-size:18px}
+  .section{margin:10px 12px}
+  .section > h3{padding:10px 12px}
+  .section .body{padding:12px}
+  .grid2,.grid3{gap:8px}
+  .paper-wrap{padding:16px 18px 32px}
+  .log{max-height:min(300px,36vh)}
+}
+@media (max-width:1280px){
+  .grid3{grid-template-columns:1fr 1fr}
+  .status-pill{gap:10px;font-size:11px}
+}
+@media (max-width:1100px){
+  main{grid-template-columns:1fr;grid-template-rows:42vh 1fr}
+  .paper-side{border-right:none;border-bottom:1px solid var(--border)}
+  .cards{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+  header{flex-wrap:wrap;gap:8px}
+  .status-pill{margin-left:0;width:100%;flex-wrap:wrap;gap:10px}
+}
+@media (max-width:860px){
+  header{flex-wrap:wrap;gap:8px}
+  .status-pill{margin-left:0;width:100%;flex-wrap:wrap;gap:10px}
+  .section{margin:8px}
+  .cards{padding:10px 8px 2px}
+  .paper-wrap{padding:12px 12px 26px}
+}
+@media (max-width:640px){
+  .grid2,.grid3{grid-template-columns:1fr}
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .btn-row .btn{flex:1 1 auto}
+  .tax-chips{flex-wrap:wrap}
+  .tax-chips label{flex:1 1 40%}
+  .raw-line{flex-direction:column}
+  .raw-line .btn{width:100%}
+  .paper{font-size:11px;padding:14px 10px 22px}
+  .paper-head{flex-wrap:wrap}
+  .paper-head select{max-width:100%;width:100%;margin-left:0}
+  main{grid-template-rows:38vh 1fr}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">🧾 Simulador Fiscal <span>GO</span></div>
+  <div class="brand-tabs" id="brandTabs">
+    <button data-brand="tfhka" class="active">TFHKA</button>
+    <button data-brand="hasar">Hasar</button>
+    <button data-brand="bixolon">Bixolon</button>
+    <button data-brand="epson">Epson</button>
+  </div>
+  <div class="status-pill">
+    <span><span class="dot" id="dotStatus"></span><b id="stStatus">—</b></span>
+    <span>DOC: <b id="stDoc">—</b></span>
+    <span>SERIE: <b id="stSerial">—</b></span>
+    <span>RIF: <b id="stRif">—</b></span>
+    <span>CMDs: <b id="stCmds">0</b></span>
+  </div>
+</header>
+
+<main>
+  <!-- =============== PAPER SIDE =============== -->
+  <aside class="paper-side">
+    <div class="paper-head">
+      <h2>🖨️ Salida fiscal</h2>
+      <select id="jobSelect" title="Seleccionar documento impreso">
+        <option value="live">Documento en curso (en vivo)</option>
+      </select>
+    </div>
+    <div class="paper-wrap">
+      <div class="paper" id="paper"><span class="live-tag" id="liveTag" style="display:none">● EN VIVO</span><span class="paper-empty">Esperando actividad fiscal…</span></div>
+    </div>
+  </aside>
+
+  <!-- =============== CONTROL SIDE =============== -->
+  <section class="control-side">
+
+    <div class="cards">
+      <div class="card hl"><div class="label">Facturas (histórico)</div><div class="value" id="cInv">0</div></div>
+      <div class="card"><div class="label">Notas crédito / débito</div><div class="value" id="cNotes">0 / 0</div></div>
+      <div class="card hl"><div class="label">Ventas del día</div><div class="value" id="cDaySales">0.00</div></div>
+      <div class="card"><div class="label">IVA del día</div><div class="value" id="cDayTax">0.00</div></div>
+      <div class="card"><div class="label">Ventas históricas</div><div class="value" id="cLifeSales">0.00</div></div>
+      <div class="card"><div class="label">Reportes X / Z</div><div class="value" id="cReports">0 / 0</div></div>
+      <div class="card" id="memCard"><div class="label">Memoria fiscal</div><div class="value" id="cMem">0%</div></div>
+      <div class="card"><div class="label">Doc abierto</div><div class="value" id="cDoc">NO</div></div>
+    </div>
+
+    <!-- ======= Fiscal memory (company) ======= -->
+    <div class="section">
+      <h3>🏛️ Memoria fiscal — datos de la empresa (exigidos por ley)</h3>
+      <div class="body">
+        <div class="grid2">
+          <div><label class="f">RIF</label><input id="coRif" placeholder="J-000000000-0"></div>
+          <div><label class="f">Razón social</label><input id="coName" placeholder="EMPRESA C.A."></div>
+        </div>
+        <div style="margin-top:9px"><label class="f">Domicilio fiscal (dirección)</label><input id="coAddr" placeholder="Av. Principal, Edificio, piso, oficina"></div>
+        <div class="grid3" style="margin-top:9px">
+          <div><label class="f">Municipio / Parroquia</label><input id="coMun" placeholder="Libertador"></div>
+          <div><label class="f">Ciudad</label><input id="coCity" placeholder="Caracas"></div>
+          <div><label class="f">Estado</label><input id="coState" placeholder="Distrito Capital"></div>
+        </div>
+        <div class="grid3" style="margin-top:9px">
+          <div><label class="f">Teléfono</label><input id="coTel" placeholder="0212-0000000"></div>
+          <div><label class="f">Email</label><input id="coMail" placeholder="facturas@empresa.com"></div>
+          <div><label class="f">Moneda</label>
+            <select id="coCur"><option>Bs.</option><option>$</option><option>US$</option></select>
+          </div>
+        </div>
+        <div class="grid2" style="margin-top:9px">
+          <div><label class="f">Representante legal</label><input id="coRep" placeholder="NOMBRE APELLIDO"></div>
+          <div><label class="f">C.I. Representante</label><input id="coRepId" placeholder="V-00000000"></div>
+        </div>
+        <div class="grid2" style="margin-top:9px">
+          <div><label class="f">Actividad económica (código y descripción)</label><input id="coAct" placeholder="0000 — Compra-venta de mercancías"></div>
+          <div><label class="f">Condiciones de pago</label>
+            <select id="coTerms"><option>CONTADO</option><option>CRÉDITO</option><option>CONTADO / CRÉDITO</option></select>
+          </div>
+        </div>
+        <div class="grid2" style="margin-top:9px;align-items:center">
+          <div style="display:flex;gap:16px;padding-top:14px">
+            <label style="font-size:12.5px;display:flex;gap:6px;align-items:center;cursor:pointer">
+              <input type="checkbox" id="coEsp" style="width:auto"> Contribuyente especial
+            </label>
+            <label style="font-size:12.5px;display:flex;gap:6px;align-items:center;cursor:pointer">
+              <input type="checkbox" id="coRet" style="width:auto"> Agente de retención
+            </label>
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn primary" onclick="saveCompany()">💾 Programar memoria fiscal</button>
+          <button class="btn" onclick="loadCompany()">↻ Recargar</button>
+        </div>
+        <div class="hint">Al programar la memoria, estos datos aparecen en el encabezado de <b>toda</b> factura, nota y reporte impresos (S8E).</div>
+      </div>
+    </div>
+
+    <!-- ======= Quick sale ======= -->
+    <div class="section">
+      <h3>🛒 Emisión rápida de comprobante</h3>
+      <div class="body">
+        <div class="grid3">
+          <div><label class="f">RIF cliente</label><input id="cuRif" placeholder="J-12345678-9"></div>
+          <div><label class="f">Nombre / Razón social</label><input id="cuName" placeholder="CLIENTE EJEMPLO"></div>
+          <div><label class="f">Dirección</label><input id="cuAddr" placeholder="Av. Libertador"></div>
+        </div>
+        <div class="btn-row" style="margin-top:8px">
+          <button class="btn" onclick="saleAction('customer')">👤 Registrar cliente</button>
+          <button class="btn primary" onclick="saleAction('open')">📄 Abrir documento</button>
+          <button class="btn red" onclick="saleAction('cancel')">✖ Cancelar</button>
+        </div>
+
+        <hr style="border:none;border-top:1px solid var(--border);margin:14px 0">
+
+        <div class="grid3">
+          <div style="grid-column:span 2"><label class="f">Descripción del artículo / servicio</label><input id="itDesc" placeholder="CAFE PREMIUM 250G"></div>
+          <div><label class="f">Precio unitario (con IVA)</label><input id="itPrice" type="number" step="0.01" min="0" placeholder="15.00"></div>
+        </div>
+        <div class="grid3" style="margin-top:9px;align-items:end">
+          <div><label class="f">Cantidad</label><input id="itQty" type="number" step="0.001" min="0" value="1"></div>
+          <div style="grid-column:span 2">
+            <label class="f">Alícuota IVA</label>
+            <div class="tax-chips">
+              <label><input type="radio" name="tax" value="exempt"><span>Exento 0%</span></label>
+              <label><input type="radio" name="tax" value="general" checked><span>General 16%</span></label>
+              <label><input type="radio" name="tax" value="reduced"><span>Reducida 8%</span></label>
+              <label><input type="radio" name="tax" value="additional"><span>Adicional 30%</span></label>
+            </div>
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn green" onclick="addItem()">➕ Agregar ítem</button>
+          <button class="btn" onclick="saleAction('subtotal')">Σ Subtotal</button>
+        </div>
+
+        <hr style="border:none;border-top:1px solid var(--border);margin:14px 0">
+
+        <div class="grid3">
+          <div><label class="f">Monto pagado</label><input id="payAmount" type="number" step="0.01" min="0" placeholder="0.00"></div>
+          <div><label class="f">Medio de pago</label>
+            <select id="payMethod">
+              <option value="cash">Efectivo</option>
+              <option value="card">Tarjeta</option>
+              <option value="transfer">Transferencia</option>
+              <option value="credit">Crédito</option>
+            </select>
+          </div>
+          <div style="display:flex;align-items:flex-end;gap:8px">
+            <button class="btn" onclick="fillExact()" style="flex:1">Exacto</button>
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn" onclick="saleAction('payment')">💰 Registrar pago</button>
+          <button class="btn green" onclick="saleAction('close')">🖨️ Cerrar e imprimir</button>
+          <button class="btn" onclick="saleAction('drawer')">🗄️ Gaveta</button>
+          <button class="btn" onclick="saleAction('status')">ℹ️ Estado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======= Reports ======= -->
+    <div class="section">
+      <h3>📊 Reportes de cierre</h3>
+      <div class="body">
+        <div class="btn-row" style="margin-top:0">
+          <button class="btn amber" onclick="printReport('x')">🧾 Reporte X (lectura, no reinicia)</button>
+          <button class="btn red" onclick="printReport('z')">🔒 Reporte Z (cierre del día, reinicia)</button>
+        </div>
+        <div class="hint">El <b>Reporte X</b> muestra los totales sin reiniciarlos. El <b>Reporte Z</b> cierra el día: los acumulados diarios vuelven a cero, pero los contadores históricos (facturas y ventas totales) se conservan.</div>
+      </div>
+    </div>
+
+    <!-- ======= Raw console ======= -->
+    <div class="section">
+      <h3>⌨️ Consola de comandos (protocolo real)</h3>
+      <div class="body">
+        <div class="raw-line">
+          <input id="rawCmd" placeholder='Ej: !   1.000     15.00 CAFE  ·  101  ·  U0X  ·  @PrintLine|CAFE|1|15.00|general' autocomplete="off">
+          <button class="btn primary" onclick="sendRaw()">Enviar ⏎</button>
+        </div>
+        <div class="hint" id="protocolHint"></div>
+      </div>
+    </div>
+
+    <!-- ======= Log ======= -->
+    <div class="section" style="margin-bottom:24px">
+      <h3>📋 Registro de actividad — todo lo que procesa la impresora</h3>
+      <div class="body" style="padding:0">
+        <div class="log" id="log">
+          <div class="log-row"><span class="seq">—</span><div><span class="cmd">Sin comandos aún…</span></div></div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</main>
+
+<div class="toast" id="toast"></div>
+
+<script>
+"use strict";
+let brand = "tfhka";
+let lastSeq = 0;
+let selectedJob = "live";   // "live" or job id
+let lastJobId = null;
+let pollTimer = null;
+
+const $ = id => document.getElementById(id);
+
+function toast(msg, isErr=false){
+  const t = $("toast");
+  t.textContent = msg;
+  t.className = "toast show" + (isErr ? " err" : "");
+  setTimeout(()=>{ t.className = "toast"; }, 2600);
+}
+
+async function api(path, opts){
+  const res = await fetch(path, Object.assign({
+    headers: {"Content-Type":"application/json"}
+  }, opts||{}));
+  if(!res.ok) throw new Error("HTTP "+res.status);
+  return res.json();
+}
+
+/* ---------------- brand switching ---------------- */
+$("brandTabs").addEventListener("click", e=>{
+  const btn = e.target.closest("button[data-brand]");
+  if(!btn) return;
+  brand = btn.dataset.brand;
+  document.querySelectorAll("#brandTabs button")
+    .forEach(b=>b.classList.toggle("active", b===btn));
+  lastSeq = 0; lastJobId = null; selectedJob = "live";
+  $("jobSelect").innerHTML = '<option value="live">Documento en curso (en vivo)</option>';
+  $("jobSelect").dataset.signature = "";
+  $("log").innerHTML = "";
+  updateProtocolHint();
+  loadCompany();
+  refreshAll();
+});
+
+function updateProtocolHint(){
+  if(brand === "tfhka"){
+    $("protocolHint").innerHTML =
+      'Protocolo TFHKA (ASCII): ítems con prefijo <code>!</code> general, <code>"</code> reducida, <code>#</code> adicional, <code>&nbsp;</code> exento · subtotal <code>3</code> · pago <code>100xx.xx</code> · cerrar <code>101</code> · X <code>U0X</code> · Z <code>U0Z</code>';
+  }else{
+    $("protocolHint").innerHTML =
+      'Protocolo IxBatch: <code>@OpenFiscalReceipt</code> · <code>@PrintLine|DESC|CANT|PRECIO|TASA</code> · <code>@AddPayment|MONTO|METODO</code> · <code>@Close</code> · <code>@Status</code> · <code>@PrintXReport</code> · <code>@PrintZReport</code>';
+  }
+}
+
+/* ---------------- state / cards ---------------- */
+async function refreshState(){
+  const s = await api("/api/state?brand="+brand);
+  $("stStatus").textContent = s.status.hex + " " + s.status.name;
+  $("dotStatus").className = "dot" + (s.error.code ? " err" : (s.memory_status!=="ok" ? " warn" : ""));
+  $("stDoc").textContent = s.document.open
+    ? ("ABIERTO (" + (s.document.type||"?") + ")" + (s.document.items ? " · "+s.document.items+" ítems" : ""))
+    : "CERRADO";
+  $("stSerial").textContent = s.serial_number;
+  $("stRif").textContent = s.rif;
+  $("stCmds").textContent = s.command_count;
+
+  $("cInv").textContent = s.counters.invoices;
+  $("cNotes").textContent = s.counters.credit_notes + " / " + s.counters.debit_notes;
+  $("cDaySales").textContent = s.daily.sales.toFixed(2);
+  $("cDayTax").textContent = s.daily.tax.toFixed(2);
+  $("cLifeSales").textContent = s.totals.lifetime_sales.toFixed(2);
+  $("cReports").textContent = s.counters.x_reports + " / " + s.counters.z_reports;
+  $("cMem").textContent = s.memory.used_pct + "%";
+  $("memCard").className = "card" + (s.memory.used_pct > 85 ? " warn" : "");
+  $("cDoc").textContent = s.document.open ? "SÍ" : "NO";
+  window._lastPayable = s.document.payable;
+  window._lastPaid = s.document.paid;
+
+  // A new document just opened: go back to the live paper view
+  if(s.document.open && window._wasOpen === false && selectedJob !== "live"){
+    selectedJob = "live";
+    $("jobSelect").value = "live";
+  }
+  window._wasOpen = s.document.open;
+
+  if(selectedJob === "live") await renderLive();
+}
+
+/* ---------------- log ---------------- */
+async function refreshLog(){
+  const data = await api(`/api/history?brand=${brand}&since=${lastSeq}`);
+  if(!data.entries.length) return;
+  const log = $("log");
+  if(log.querySelector(".log-row .seq") && log.textContent.includes("Sin comandos aún")){
+    log.innerHTML = "";
+  }
+  for(const e of data.entries){
+    lastSeq = Math.max(lastSeq, e.seq);
+    const row = document.createElement("div");
+    row.className = "log-row" + (e.ok ? "" : " err");
+    const seq = document.createElement("span");
+    seq.className = "seq"; seq.textContent = "#" + e.seq;
+    const body = document.createElement("div");
+    const cmd = document.createElement("span");
+    cmd.className = "cmd"; cmd.textContent = "→ " + e.command;
+    const rsp = document.createElement("span");
+    rsp.className = "rsp"; rsp.textContent = "← " + e.response;
+    const ts = document.createElement("span");
+    ts.className = "ts"; ts.textContent = e.ts;
+    body.appendChild(cmd); body.appendChild(rsp); body.appendChild(ts);
+    row.appendChild(seq); row.appendChild(body);
+    log.appendChild(row);
+  }
+  while(log.children.length > 300) log.removeChild(log.firstChild);
+  log.scrollTop = log.scrollHeight;
+}
+
+/* ---------------- paper ---------------- */
+function renderLines(lines, live){
+  const paper = $("paper");
+  paper.innerHTML = "";
+  const tag = document.createElement("span");
+  tag.className = "live-tag";
+  tag.style.display = live ? "" : "none";
+  tag.textContent = "● EN VIVO";
+  paper.appendChild(tag);
+  if(!lines || !lines.length){
+    const empty = document.createElement("span");
+    empty.className = "paper-empty";
+    empty.textContent = "Esperando actividad fiscal…";
+    paper.appendChild(empty);
+    return;
+  }
+  const text = document.createElement("span");
+  text.textContent = lines.join("\n");
+  paper.appendChild(text);
+}
+
+async function renderLive(){
+  const data = await api("/api/preview?brand="+brand);
+  if(data.open && data.lines.length){
+    renderLines(data.lines, true);
+  }else if(lastJobId){
+    await showJob(lastJobId, false);
+  }else{
+    renderLines([], true);
+  }
+}
+
+async function showJob(id, animate){
+  try{
+    const job = await api(`/api/job/${id}?brand=${brand}`);
+    renderLines(job.lines, false);
+  }catch(e){ /* job vanished */ }
+}
+
+async function refreshJobs(){
+  const data = await api("/api/jobs?brand="+brand);
+  const sel = $("jobSelect");
+  const current = sel.value;
+  const signature = data.jobs.map(j=>j.id+":"+j.title).join("|");
+  if(signature === sel.dataset.signature) return;  // nothing new
+  sel.dataset.signature = signature;
+  rebuilding = true;  // ignore change events fired while rebuilding
+  try{
+    sel.innerHTML = '<option value="live">Documento en curso (en vivo)</option>';
+    for(const j of data.jobs){
+      const opt = document.createElement("option");
+      opt.value = j.id;
+      opt.textContent = `#${j.id} · ${j.title}`;
+      sel.appendChild(opt);
+    }
+    sel.value = Array.from(sel.options).some(o=>o.value===current) ? current : "live";
+  }finally{
+    rebuilding = false;
+  }
+  selectedJob = sel.value;
+
+  if(data.jobs.length){
+    const newest = data.jobs[0];
+    if(lastJobId !== null && newest.id !== lastJobId){
+      // A new document/report was just printed: show it and select it
+      if(selectedJob === "live"){
+        selectedJob = String(newest.id);
+        sel.value = selectedJob;
+        await showJob(newest.id, true);
+        toast("🖨️ Impreso: " + newest.title);
+      }
+    }
+    lastJobId = newest.id;
+  }
+}
+
+let rebuilding = false;
+
+$("jobSelect").addEventListener("change", async e=>{
+  if(rebuilding) return;
+  selectedJob = e.target.value;
+  if(selectedJob === "live"){ await renderLive(); }
+  else{ await showJob(parseInt(selectedJob,10), false); }
+});
+
+/* ---------------- actions ---------------- */
+async function saleAction(action){
+  const params = {
+    doc: "invoice",
+    rif: $("cuRif").value.trim(),
+    name: $("cuName").value.trim(),
+    address: $("cuAddr").value.trim(),
+    description: $("itDesc").value.trim() || "ITEM",
+    qty: parseFloat($("itQty").value || "1"),
+    price: parseFloat($("itPrice").value || "0"),
+    tax: document.querySelector('input[name="tax"]:checked').value,
+    amount: parseFloat($("payAmount").value || "0"),
+    method: $("payMethod").value,
+  };
+  try{
+    const res = await api("/api/sale", {
+      method:"POST",
+      body: JSON.stringify({brand, action, params})
+    });
+    if(res.error){ toast(res.error, true); return; }
+    if(res.note) toast(res.note);
+    else if(res.responses && res.responses.length){
+      const last = res.responses[res.responses.length-1];
+      const ok = !/Error|ERROR/.test(last.response);
+      toast((ok?"✓ ":"✗ ") + last.response.slice(0,90), !ok);
+    }
+    await refreshAll();
+  }catch(e){ toast("Error: "+e.message, true); }
+}
+
+function addItem(){
+  const price = parseFloat($("itPrice").value || "0");
+  const desc = $("itDesc").value.trim();
+  if(!desc){ toast("Descripción requerida", true); return; }
+  if(!(price > 0)){ toast("Precio requerido", true); return; }
+  saleAction("item");
+}
+
+function fillExact(){
+  // Payable for the open document (cached from the last state refresh)
+  const payable = (window._lastPayable || 0) - (window._lastPaid || 0);
+  $("payAmount").value = payable > 0 ? payable.toFixed(2) : "0.00";
+}
+
+async function printReport(kind){
+  try{
+    const res = await api("/api/report", {
+      method:"POST", body: JSON.stringify({brand, type: kind})
+    });
+    const last = res.responses && res.responses[res.responses.length-1];
+    toast((kind==="x"?"Reporte X":"Reporte Z") + " enviado ✓");
+    await refreshAll();
+    if(res.last_job_id){ selectedJob = "live"; await showJob(res.last_job_id, true); }
+  }catch(e){ toast("Error: "+e.message, true); }
+}
+
+async function sendRaw(){
+  const input = $("rawCmd");
+  const cmd = input.value.trim();
+  if(!cmd) return;
+  input.value = "";
+  try{
+    const res = await api("/api/command", {
+      method:"POST", body: JSON.stringify({brand, command: cmd})
+    });
+    const ok = !/Error|ERROR/.test(res.response);
+    toast((ok?"✓ ":"✗ ") + res.response.slice(0,90), !ok);
+    await refreshAll();
+  }catch(e){ toast("Error: "+e.message, true); }
+}
+$("rawCmd").addEventListener("keydown", e=>{ if(e.key==="Enter") sendRaw(); });
+
+/* ---------------- company memory ---------------- */
+async function loadCompany(){
+  try{
+    const data = await api("/api/company?brand="+brand);
+    const c = data.company || {};
+    $("coRif").value = c.rif || "";
+    $("coName").value = c.razon_social || "";
+    $("coAddr").value = c.direccion || "";
+    $("coMun").value = c.municipio || "";
+    $("coCity").value = c.ciudad || "";
+    $("coState").value = c.estado || "";
+    $("coTel").value = c.telefono || "";
+    $("coMail").value = c.email || "";
+    $("coCur").value = c.moneda || "Bs.";
+    $("coRep").value = c.representante_legal || "";
+    $("coRepId").value = c.cedula_representante || "";
+    $("coAct").value = c.actividad_economica || "";
+    $("coTerms").value = c.condiciones_pago || "CONTADO";
+    $("coEsp").checked = !!c.contribuyente_especial;
+    $("coRet").checked = !!c.agente_retencion;
+  }catch(e){ /* first load */ }
+}
+
+async function saveCompany(){
+  const company = {
+    rif: $("coRif").value.trim(),
+    razon_social: $("coName").value.trim(),
+    direccion: $("coAddr").value.trim(),
+    municipio: $("coMun").value.trim(),
+    ciudad: $("coCity").value.trim(),
+    estado: $("coState").value.trim(),
+    telefono: $("coTel").value.trim(),
+    email: $("coMail").value.trim(),
+    moneda: $("coCur").value,
+    representante_legal: $("coRep").value.trim(),
+    cedula_representante: $("coRepId").value.trim(),
+    actividad_economica: $("coAct").value.trim(),
+    condiciones_pago: $("coTerms").value,
+    contribuyente_especial: $("coEsp").checked,
+    agente_retencion: $("coRet").checked,
+  };
+  if(!company.rif || !company.razon_social){
+    toast("RIF y razón social son obligatorios", true); return;
+  }
+  try{
+    await api("/api/company", {
+      method:"POST", body: JSON.stringify({brand, company})
+    });
+    toast("💾 Memoria fiscal programada ✓");
+    await refreshAll();
+  }catch(e){ toast("Error: "+e.message, true); }
+}
+
+/* ---------------- loop ---------------- */
+async function refreshAll(){
+  await Promise.all([refreshState(), refreshLog(), refreshJobs()]);
+  if($("jobSelect").value === "live") await renderLive();
+}
+async function poll(){
+  try{
+    await Promise.all([refreshState(), refreshLog(), refreshJobs()]);
+  }catch(e){ /* transient */ }
+  pollTimer = setTimeout(poll, 900);
+}
+
+updateProtocolHint();
+loadCompany();
+refreshAll().then(()=>{ poll(); });
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+       DISTRIBUIDORA ANDELINA, C.A.       
+            RIF: J-31055823-7             
+   AV. PRINCIPAL DE LAS MERCEDES, EDIF.   
+      TORRE AZUL, PISO 4, OFIC. 401       
+   CHACAO - CARACAS - DISTRITO CAPITAL    
+            Telf: 0212-9512204            
+ Rep. Legal: MARIA ELENA RODRIGUEZ SUAREZ 
+            - C.I. V-10234567             
+   Actividad: COMERCIO AL POR MENOR DE    
+     PRODUCTOS ALIMENTICIOS Y BEBIDAS     
+          CONTRIBUYENTE ESPECIAL          
+         AGENTE DE RETENCION IVA          
+==========================================
+        REPORTE X - CORTE DE CAJA         
+             REPORTE N° 0001              
+           15/01/2026  10:30:00           
+==========================================
+DOCUMENTOS DEL DIA:
+  Facturas:                              0
+  Notas de credito:                      0
+  Notas de debito:                       0
+  No fiscales:                           0
+------------------------------------------
+VENTAS POR ALICUOTA:
+------------------------------------------
+FORMAS DE PAGO:
+  (sin pagos registrados)
+==========================================
+TOTAL VENTAS:                         0,00
+TOTAL IVA:                            0,00
+==========================================
+         ESTE REPORTE NO REINICIA         
+           LOS TOTALES DEL DIA            
+------------------------------------------
+     * * * * * * * * * * * * * * * *      
+       SIMULADOR - NO VALOR FISCAL        

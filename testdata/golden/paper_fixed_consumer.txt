@@ -1,0 +1,46 @@
+       DISTRIBUIDORA ANDELINA, C.A.       
+            RIF: J-31055823-7             
+   AV. PRINCIPAL DE LAS MERCEDES, EDIF.   
+      TORRE AZUL, PISO 4, OFIC. 401       
+   CHACAO - CARACAS - DISTRITO CAPITAL    
+            Telf: 0212-9512204            
+ Rep. Legal: MARIA ELENA RODRIGUEZ SUAREZ 
+            - C.I. V-10234567             
+   Actividad: COMERCIO AL POR MENOR DE    
+     PRODUCTOS ALIMENTICIOS Y BEBIDAS     
+          CONTRIBUYENTE ESPECIAL          
+         AGENTE DE RETENCION IVA          
+==========================================
+              FACTURA FISCAL              
+               N° 00000001                
+           15/01/2026  10:30:00           
+==========================================
+CLIENTE:
+  CONSUMIDOR FINAL
+------------------------------------------
+   CANT DESCRIPCION          PREC  IVA   IMPORTE
+------------------------------------------
+  2.000 CAFE MOLIDO 500G     3.90  G16      7.80
+------------------------------------------
+SUBTOTAL:                             7,80
+  BASE IVA 16%:                       6,72
+  IVA 16%:                            1,08
+==========================================
+TOTAL Bs.:                            7,80
+==========================================
+TARJETA:                              9,02
+CAMBIO:                               1,22
+------------------------------------------
+  SON: SIETE CON 80/100
+------------------------------------------
+MAQUINA:                        MLTFHKA001
+RIF MAQ.:                     J-31055823-7
+COND. PAGO:              CONTADO / CRÉDITO
+        ART. 63 Ley IVA - Ley Org.        
+     Simplificacion y Racionalizacion     
+          del Proceso Tributario          
+------------------------------------------
+          GRACIAS POR SU COMPRA           
+     * * * * * * * * * * * * * * * *      
+         DOCUMENTO FISCAL DIGITAL         
+       SIMULADOR - NO VALOR FISCAL        

@@ -1,0 +1,49 @@
+                                          
+  * DOCUMENTO EN CURSO - VISTA PREVIA *   
+       DISTRIBUIDORA ANDELINA, C.A.       
+            RIF: J-31055823-7             
+   AV. PRINCIPAL DE LAS MERCEDES, EDIF.   
+      TORRE AZUL, PISO 4, OFIC. 401       
+   CHACAO - CARACAS - DISTRITO CAPITAL    
+            Telf: 0212-9512204            
+ Rep. Legal: MARIA ELENA RODRIGUEZ SUAREZ 
+            - C.I. V-10234567             
+   Actividad: COMERCIO AL POR MENOR DE    
+     PRODUCTOS ALIMENTICIOS Y BEBIDAS     
+          CONTRIBUYENTE ESPECIAL          
+         AGENTE DE RETENCION IVA          
+==========================================
+              FACTURA FISCAL              
+               N° 00000001                
+           <TS>           
+==========================================
+CLIENTE:
+  RIF/C.I: J-50123456-1
+COMERCIAL EL COMUNERO, C.A.
+CALLE REAL DE CHACAO, NRO 15-23
+------------------------------------------
+   CANT DESCRIPCION          PREC  IVA   IMPORTE
+------------------------------------------
+  6.000 ARROZ VENEZOLANO     2.50  G16     15.00
+  3.000 ACEITE VEGETAL 1L    4.90  G16     14.70
+------------------------------------------
+SUBTOTAL:                            29,70
+  BASE IVA 16%:                      25,60
+  IVA 16%:                            4,10
+==========================================
+TOTAL Bs.:                           29,70
+==========================================
+------------------------------------------
+  SON: VEINTINUEVE CON 70/100
+------------------------------------------
+MAQUINA:                        MLTFHKA001
+RIF MAQ.:                     J-31055823-7
+COND. PAGO:              CONTADO / CRÉDITO
+        ART. 63 Ley IVA - Ley Org.        
+     Simplificacion y Racionalizacion     
+          del Proceso Tributario          
+------------------------------------------
+          GRACIAS POR SU COMPRA           
+     * * * * * * * * * * * * * * * *      
+         DOCUMENTO FISCAL DIGITAL         
+       SIMULADOR - NO VALOR FISCAL        

@@ -1,0 +1,24 @@
+{"scenario": "epson", "i": 0, "command": "@Status", "response": "0x04|0x00|@Response|OK|0|Status: 0x04|Error: 0x00|Doc: CERRADO|Ventas: 0.00"}
+{"scenario": "epson", "i": 1, "command": "@OpenFiscalReceipt", "response": "0x05|0x00|@Response|OK|0|Documento fiscal abierto"}
+{"scenario": "epson", "i": 2, "command": "@CustomerData|J-12345678-9|EMPRESA C.A.|Av Principal", "response": "0x05|0x00|@Response|OK|0|Cliente J-12345678-9 EMPRESA C.A."}
+{"scenario": "epson", "i": 3, "command": "@PrintLine|CAFE|2|15.00|general", "response": "0x05|0x00|@Response|OK|0|CAFE|2.000|15.00|30.00"}
+{"scenario": "epson", "i": 4, "command": "@PrintLine|PAN|3|8.00|reduced", "response": "0x05|0x00|@Response|OK|0|PAN|3.000|8.00|24.00"}
+{"scenario": "epson", "i": 5, "command": "@PrintLine|ARROZ|1|5.00|exento", "response": "0x05|0x00|@Response|OK|0|ARROZ|1.000|5.00|5.00"}
+{"scenario": "epson", "i": 6, "command": "@Subtotal", "response": "0x05|0x00|@Response|OK|0|Subtotal: 53.08+IVA:5.92"}
+{"scenario": "epson", "i": 7, "command": "@AddPayment|54.00|cash", "response": "0x05|0x00|@Response|OK|0|Pago: 54.00|Pendiente: 5.00"}
+{"scenario": "epson", "i": 8, "command": "@Close", "response": "0x04|0x00|@Response|OK|0|Factura 1 cerrada|Total: 59.00|Impreso:1"}
+{"scenario": "epson", "i": 9, "command": "@PrintXReport", "response": "0x04|0x00|@Response|OK|0|Reporte X #1|Ventas: 59.00|Impreso:2"}
+{"scenario": "epson", "i": 10, "command": "@PrintZReport", "response": "0x04|0x00|@Response|OK|0|Reporte Z #1|Ventas: 59.00|Impreso:3"}
+{"scenario": "epson", "i": 11, "command": "@OpenCreditNote", "response": "0x05|0x00|@Response|OK|0|Nota de credito abierta"}
+{"scenario": "epson", "i": 12, "command": "@PrintLine|NC ITEM|1|10.00|general", "response": "0x05|0x00|@Response|OK|0|NC ITEM|1.000|10.00|10.00"}
+{"scenario": "epson", "i": 13, "command": "@Close", "response": "0x04|0x00|@Response|OK|0|Nota de Credito 1 cerrada|Total: 10.00|Impreso:4"}
+{"scenario": "epson", "i": 14, "command": "@OpenDebitNote", "response": "0x05|0x00|@Response|OK|0|Nota de debito abierta"}
+{"scenario": "epson", "i": 15, "command": "@PrintLine|ND ITEM|1|10.00|general", "response": "0x05|0x00|@Response|OK|0|ND ITEM|1.000|10.00|10.00"}
+{"scenario": "epson", "i": 16, "command": "@Close", "response": "0x04|0x00|@Response|OK|0|Nota de Debito 1 cerrada|Total: 10.00|Impreso:5"}
+{"scenario": "epson", "i": 17, "command": "@OpenNonFiscalDoc", "response": "0x06|0x00|@Response|OK|0|Documento no fiscal abierto"}
+{"scenario": "epson", "i": 18, "command": "@PrintNonFiscalText|nota", "response": "0x06|0x00|@Response|OK|0|No fiscal: nota"}
+{"scenario": "epson", "i": 19, "command": "@CloseNonFiscalDoc", "response": "0x04|0x00|@Response|OK|0|DNF cerrado"}
+{"scenario": "epson", "i": 20, "command": "@OpenDrawer", "response": "0x04|0x00|@Response|OK|0|Gaveta 1 abierta"}
+{"scenario": "epson", "i": 21, "command": "@PrintLineItem|OTRO|1|10.00|1|M", "response": "0x05|0x00|@Response|OK|0|OTRO|1.000|10.00|10.00"}
+{"scenario": "epson", "i": 22, "command": "@UnknownCommand|x", "response": "0x05|0x00|@Response|Error|0x50|Comando desconocido"}
+{"scenario": "epson", "i": 23, "command": "", "response": "0x05|0x00|ERROR|0x50|Comando desconocido"}
