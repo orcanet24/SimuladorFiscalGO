@@ -1,0 +1,620 @@
+{
+ "saved_at": "2026-10-11T15:06:04.7785225-04:00",
+ "brand": "TFHKA",
+ "model": "TFHKA",
+ "command_count": 18,
+ "history": [
+  {
+   "seq": 1,
+   "ts": "2026-10-11T12:47:03.161",
+   "command": "!   001000 000001500 CAFE",
+   "response": "ERROR|0x50|Invalid qty/price",
+   "ok": false
+  },
+  {
+   "seq": 2,
+   "ts": "2026-10-11T12:47:03.400",
+   "command": "\"   001000 000000800 PAN",
+   "response": "ERROR|0x50|Invalid qty/price",
+   "ok": false
+  },
+  {
+   "seq": 3,
+   "ts": "2026-10-11T12:47:03.701",
+   "command": "3",
+   "response": "0|Subtotal: 0.00 + 0.00 = 0.00",
+   "ok": true
+  },
+  {
+   "seq": 4,
+   "ts": "2026-10-11T12:47:04.002",
+   "command": "101",
+   "response": "0|Factura 1|Total: 0.00|Impreso:1",
+   "ok": true
+  },
+  {
+   "seq": 5,
+   "ts": "2026-10-11T12:47:04.302",
+   "command": "S1",
+   "response": "0|MLTFHKA001|J-12345678-9|1|0|1|0|0|0|0.00|2026-10-11 12:47:04",
+   "ok": true
+  },
+  {
+   "seq": 6,
+   "ts": "2026-10-11T12:47:04.604",
+   "command": "U0Z",
+   "response": "0|Reporte Z #1|Ventas: 0.00|IVA: 0.00|Impreso:2",
+   "ok": true
+  },
+  {
+   "seq": 7,
+   "ts": "2026-10-11T12:48:12.224",
+   "command": "!   1.000      1.50CAFE",
+   "response": "0|Item|CAFE|1.000|1.50|0.21|1.50",
+   "ok": true
+  },
+  {
+   "seq": 8,
+   "ts": "2026-10-11T12:48:12.525",
+   "command": "\"   2.000      0.80PAN",
+   "response": "0|Item|PAN|2.000|0.80|0.12|1.60",
+   "ok": true
+  },
+  {
+   "seq": 9,
+   "ts": "2026-10-11T12:48:12.826",
+   "command": "3",
+   "response": "0|Subtotal: 2.77 + 0.33 = 3.10",
+   "ok": true
+  },
+  {
+   "seq": 10,
+   "ts": "2026-10-11T12:48:13.128",
+   "command": "101",
+   "response": "0|Factura 2|Total: 3.10|Impreso:3",
+   "ok": true
+  },
+  {
+   "seq": 11,
+   "ts": "2026-10-11T12:48:13.429",
+   "command": "S1",
+   "response": "0|MLTFHKA001|J-12345678-9|2|1|2|0|0|0|3.10|2026-10-11 12:48:13",
+   "ok": true
+  },
+  {
+   "seq": 12,
+   "ts": "2026-10-11T13:12:42.577",
+   "command": "iS*CONSUMIDOR FINAL",
+   "response": "0|Nombre registrado",
+   "ok": true
+  },
+  {
+   "seq": 13,
+   "ts": "2026-10-11T13:12:42.628",
+   "command": "\"   2.000     15.50CAFE EXPORT 1KG",
+   "response": "0|Item|CAFE EXPORT 1KG|2.000|15.50|2.30|31.00",
+   "ok": true
+  },
+  {
+   "seq": 14,
+   "ts": "2026-10-11T13:12:42.678",
+   "command": "101",
+   "response": "0|Factura 3|Total: 31.00|Impreso:4",
+   "ok": true
+  },
+  {
+   "seq": 15,
+   "ts": "2026-10-11T13:12:42.736",
+   "command": "101",
+   "response": "0|Cerrado",
+   "ok": true
+  },
+  {
+   "seq": 16,
+   "ts": "2026-10-11T13:12:42.790",
+   "command": "U0X",
+   "response": "0|Reporte X #1|Ventas: 34.10|IVA: 2.62|Impreso:5",
+   "ok": true
+  },
+  {
+   "seq": 17,
+   "ts": "2026-10-11T13:12:42.839",
+   "command": "S1",
+   "response": "0|MLTFHKA001|J-12345678-9|3|1|3|0|0|0|34.10|2026-10-11 13:12:42",
+   "ok": true
+  },
+  {
+   "seq": 18,
+   "ts": "2026-10-11T15:06:04.778",
+   "command": "S1",
+   "response": "0|MLTFHKA001|J-12345678-9|3|1|3|0|0|0|34.10|2026-10-11 15:06:04",
+   "ok": true
+  }
+ ],
+ "serial_number": "MLTFHKA001",
+ "fiscal_registration": "J-12345678-9",
+ "rif": "J-12345678-9",
+ "mode": "fiscal",
+ "memory_status": "ok",
+ "current_state": "waiting",
+ "fiscal_counter": 3,
+ "invoice_counter": 3,
+ "credit_note_counter": 0,
+ "debit_note_counter": 0,
+ "non_fiscal_counter": 0,
+ "z_report_counter": 1,
+ "x_report_counter": 1,
+ "daily_closure_counter": 1,
+ "total_sales": 34.1,
+ "total_tax": 2.621711366538954,
+ "total_discounts": 0,
+ "total_surcharges": 0,
+ "daily_sales": 34.1,
+ "daily_tax": 2.621711366538954,
+ "daily_discounts": 0,
+ "daily_surcharges": 0,
+ "daily_invoices": 2,
+ "daily_credit_notes": 0,
+ "daily_debit_notes": 0,
+ "daily_non_fiscal": 0,
+ "tax_totals": {
+  "additional": {
+   "base": 0,
+   "tax": 0
+  },
+  "exempt": {
+   "base": 0,
+   "tax": 0
+  },
+  "general": {
+   "base": 1.293103448275862,
+   "tax": 0.2068965517241379
+  },
+  "reduced": {
+   "base": 30.185185185185183,
+   "tax": 2.4148148148148163
+  }
+ },
+ "credit_note_totals": {
+  "additional": {
+   "base": 0,
+   "tax": 0
+  },
+  "exempt": {
+   "base": 0,
+   "tax": 0
+  },
+  "general": {
+   "base": 0,
+   "tax": 0
+  },
+  "reduced": {
+   "base": 0,
+   "tax": 0
+  }
+ },
+ "debit_note_totals": {
+  "additional": {
+   "base": 0,
+   "tax": 0
+  },
+  "exempt": {
+   "base": 0,
+   "tax": 0
+  },
+  "general": {
+   "base": 0,
+   "tax": 0
+  },
+  "reduced": {
+   "base": 0,
+   "tax": 0
+  }
+ },
+ "payment_totals": {},
+ "company": {
+  "rif": "",
+  "razon_social": "",
+  "direccion": "",
+  "municipio": "",
+  "ciudad": "",
+  "estado": "",
+  "telefono": "",
+  "email": "",
+  "representante_legal": "",
+  "cedula_representante": "",
+  "actividad_economica": "",
+  "nif": "",
+  "moneda": "Bs.",
+  "logo_text": "",
+  "condiciones_pago": "CONTADO",
+  "contribuyente_especial": false,
+  "agente_retencion": false
+ },
+ "headers": [
+  "RIF: J-12345678-9",
+  "FACTURA FISCAL",
+  "AVENIDA PRINCIPAL",
+  "CARACAS - VENEZUELA",
+  "",
+  "",
+  "",
+  ""
+ ],
+ "footers": {
+  "footer1": "GRACIAS POR SU COMPRA"
+ },
+ "flags": {
+  "dont_open_drawer": false,
+  "paper_sensor_enabled": true,
+  "print_customer_data": false,
+  "print_logo": false,
+  "print_z_report_items": false,
+  "reduce_z_report": false
+ },
+ "document_open": false,
+ "document_type": "",
+ "current_items": [],
+ "subtotal_bases": 0,
+ "subtotal_tax": 0,
+ "amount_payable": 0,
+ "payments_made": 0,
+ "payment_count": 0,
+ "doc_payments": {},
+ "subtotal_printed": false,
+ "customer_rif": "",
+ "customer_name": "",
+ "customer_address": "",
+ "customer_phone": "",
+ "reference_invoice": "",
+ "reference_date": "",
+ "reference_serial": "",
+ "audit_memory_number": 1,
+ "audit_memory_total": 4,
+ "audit_memory_free": 3.498046875,
+ "audit_memory_used": 0.501953125,
+ "z_reports": [
+  {
+   "type": "Z",
+   "number": 1,
+   "timestamp": "2026-10-11T12:47:04.6032741-04:00",
+   "last_invoice": 1,
+   "last_credit_note": 0,
+   "last_debit_note": 0,
+   "total_sales": 0,
+   "total_tax": 0,
+   "daily_invoices": 1,
+   "daily_credit_notes": 0,
+   "daily_debit_notes": 0,
+   "daily_non_fiscal": 0,
+   "tax_totals": {
+    "additional": {
+     "base": 0,
+     "tax": 0
+    },
+    "exempt": {
+     "base": 0,
+     "tax": 0
+    },
+    "general": {
+     "base": 0,
+     "tax": 0
+    },
+    "reduced": {
+     "base": 0,
+     "tax": 0
+    }
+   },
+   "credit_note_totals": {
+    "additional": {
+     "base": 0,
+     "tax": 0
+    },
+    "exempt": {
+     "base": 0,
+     "tax": 0
+    },
+    "general": {
+     "base": 0,
+     "tax": 0
+    },
+    "reduced": {
+     "base": 0,
+     "tax": 0
+    }
+   },
+   "debit_note_totals": {
+    "additional": {
+     "base": 0,
+     "tax": 0
+    },
+    "exempt": {
+     "base": 0,
+     "tax": 0
+    },
+    "general": {
+     "base": 0,
+     "tax": 0
+    },
+    "reduced": {
+     "base": 0,
+     "tax": 0
+    }
+   },
+   "payments": {}
+  }
+ ],
+ "x_reports": [
+  {
+   "type": "X",
+   "number": 1,
+   "timestamp": "2026-10-11T13:12:42.7907807-04:00",
+   "last_invoice": 3,
+   "last_credit_note": 0,
+   "last_debit_note": 0,
+   "total_sales": 34.1,
+   "total_tax": 2.621711366538954,
+   "daily_invoices": 2,
+   "daily_credit_notes": 0,
+   "daily_debit_notes": 0,
+   "daily_non_fiscal": 0,
+   "tax_totals": {
+    "additional": {
+     "base": 0,
+     "tax": 0
+    },
+    "exempt": {
+     "base": 0,
+     "tax": 0
+    },
+    "general": {
+     "base": 1.293103448275862,
+     "tax": 0.2068965517241379
+    },
+    "reduced": {
+     "base": 30.185185185185183,
+     "tax": 2.4148148148148163
+    }
+   },
+   "payments": {}
+  }
+ ],
+ "print_jobs": [
+  {
+   "id": 1,
+   "kind": "receipt",
+   "title": "FACTURA FISCAL N° 00000001",
+   "ts": "2026-10-11T12:47:04",
+   "brand": "TFHKA",
+   "lines": [
+    "            EMPRESA SIN NOMBRE            ",
+    "==========================================",
+    "              FACTURA FISCAL              ",
+    "               N° 00000001                ",
+    "           11/10/2026  12:47:04           ",
+    "==========================================",
+    "CLIENTE:",
+    "  CONSUMIDOR FINAL",
+    "------------------------------------------",
+    "   CANT DESCRIPCION          PREC  IVA   IMPORTE",
+    "------------------------------------------",
+    "------------------------------------------",
+    "SUBTOTAL:                             0,00",
+    "==========================================",
+    "TOTAL Bs.:                            0,00",
+    "==========================================",
+    "------------------------------------------",
+    "  SON: CERO CON 00/100",
+    "------------------------------------------",
+    "MAQUINA:                        MLTFHKA001",
+    "RIF MAQ.:                     J-12345678-9",
+    "COND. PAGO:                        CONTADO",
+    "        ART. 63 Ley IVA - Ley Org.        ",
+    "     Simplificacion y Racionalizacion     ",
+    "          del Proceso Tributario          ",
+    "------------------------------------------",
+    "          GRACIAS POR SU COMPRA           ",
+    "     * * * * * * * * * * * * * * * *      ",
+    "         DOCUMENTO FISCAL DIGITAL         ",
+    "       SIMULADOR - NO VALOR FISCAL        "
+   ],
+   "meta": {
+    "number": 1,
+    "total": 0.0,
+    "doc_type": "invoice"
+   }
+  },
+  {
+   "id": 2,
+   "kind": "z_report",
+   "title": "REPORTE Z N° 0001",
+   "ts": "2026-10-11T12:47:04",
+   "brand": "TFHKA",
+   "lines": [
+    "            EMPRESA SIN NOMBRE            ",
+    "==========================================",
+    "        REPORTE Z - CIERRE DIARIO         ",
+    "             REPORTE N° 0001              ",
+    "           11/10/2026  12:47:04           ",
+    "==========================================",
+    "DOCUMENTOS DEL DIA:",
+    "  Facturas:                              1",
+    "  Notas de credito:                      0",
+    "  Notas de debito:                       0",
+    "  No fiscales:                           0",
+    "------------------------------------------",
+    "VENTAS POR ALICUOTA:",
+    "------------------------------------------",
+    "FORMAS DE PAGO:",
+    "  (sin pagos registrados)",
+    "==========================================",
+    "TOTAL VENTAS:                         0,00",
+    "TOTAL IVA:                            0,00",
+    "==========================================",
+    "              CIERRE DEL DIA              ",
+    "         TOTALES REINICIADOS TRAS         ",
+    "               ESTE REPORTE               ",
+    "------------------------------------------",
+    "ULTIMA FACTURA:                   00000001",
+    "CIERRES DIARIOS:                         1",
+    "     * * * * * * * * * * * * * * * *      ",
+    "       SIMULADOR - NO VALOR FISCAL        "
+   ],
+   "meta": {
+    "number": 1,
+    "total_sales": 0.0,
+    "total_tax": 0.0
+   }
+  },
+  {
+   "id": 3,
+   "kind": "receipt",
+   "title": "FACTURA FISCAL N° 00000002",
+   "ts": "2026-10-11T12:48:13",
+   "brand": "TFHKA",
+   "lines": [
+    "            EMPRESA SIN NOMBRE            ",
+    "==========================================",
+    "              FACTURA FISCAL              ",
+    "               N° 00000002                ",
+    "           11/10/2026  12:48:13           ",
+    "==========================================",
+    "CLIENTE:",
+    "  CONSUMIDOR FINAL",
+    "------------------------------------------",
+    "   CANT DESCRIPCION          PREC  IVA   IMPORTE",
+    "------------------------------------------",
+    "  1.000 CAFE                 1.50  G16      1.50",
+    "  2.000 PAN                  0.80   R8      1.60",
+    "------------------------------------------",
+    "SUBTOTAL:                             3,10",
+    "  BASE IVA 16%:                       1,29",
+    "  IVA 16%:                            0,21",
+    "  BASE IVA 8%:                        1,48",
+    "  IVA 8%:                             0,12",
+    "==========================================",
+    "TOTAL Bs.:                            3,10",
+    "==========================================",
+    "------------------------------------------",
+    "  SON: TRES CON 10/100",
+    "------------------------------------------",
+    "MAQUINA:                        MLTFHKA001",
+    "RIF MAQ.:                     J-12345678-9",
+    "COND. PAGO:                        CONTADO",
+    "        ART. 63 Ley IVA - Ley Org.        ",
+    "     Simplificacion y Racionalizacion     ",
+    "          del Proceso Tributario          ",
+    "------------------------------------------",
+    "          GRACIAS POR SU COMPRA           ",
+    "     * * * * * * * * * * * * * * * *      ",
+    "         DOCUMENTO FISCAL DIGITAL         ",
+    "       SIMULADOR - NO VALOR FISCAL        "
+   ],
+   "meta": {
+    "number": 2,
+    "total": 3.1,
+    "doc_type": "invoice"
+   }
+  },
+  {
+   "id": 4,
+   "kind": "receipt",
+   "title": "FACTURA FISCAL N° 00000003",
+   "ts": "2026-10-11T13:12:42",
+   "brand": "TFHKA",
+   "lines": [
+    "            EMPRESA SIN NOMBRE            ",
+    "==========================================",
+    "              FACTURA FISCAL              ",
+    "               N° 00000003                ",
+    "           11/10/2026  13:12:42           ",
+    "==========================================",
+    "CLIENTE:",
+    "CONSUMIDOR FINAL",
+    "------------------------------------------",
+    "   CANT DESCRIPCION          PREC  IVA   IMPORTE",
+    "------------------------------------------",
+    "  2.000 CAFE EXPORT 1KG     15.50   R8     31.00",
+    "------------------------------------------",
+    "SUBTOTAL:                            31,00",
+    "  BASE IVA 8%:                       28,70",
+    "  IVA 8%:                             2,30",
+    "==========================================",
+    "TOTAL Bs.:                           31,00",
+    "==========================================",
+    "------------------------------------------",
+    "  SON: TREINTA Y UNO CON 00/100",
+    "------------------------------------------",
+    "MAQUINA:                        MLTFHKA001",
+    "RIF MAQ.:                     J-12345678-9",
+    "COND. PAGO:                        CONTADO",
+    "        ART. 63 Ley IVA - Ley Org.        ",
+    "     Simplificacion y Racionalizacion     ",
+    "          del Proceso Tributario          ",
+    "------------------------------------------",
+    "          GRACIAS POR SU COMPRA           ",
+    "     * * * * * * * * * * * * * * * *      ",
+    "         DOCUMENTO FISCAL DIGITAL         ",
+    "       SIMULADOR - NO VALOR FISCAL        "
+   ],
+   "meta": {
+    "number": 3,
+    "total": 31.0,
+    "doc_type": "invoice"
+   }
+  },
+  {
+   "id": 5,
+   "kind": "x_report",
+   "title": "REPORTE X N° 0001",
+   "ts": "2026-10-11T13:12:42",
+   "brand": "TFHKA",
+   "lines": [
+    "            EMPRESA SIN NOMBRE            ",
+    "==========================================",
+    "        REPORTE X - CORTE DE CAJA         ",
+    "             REPORTE N° 0001              ",
+    "           11/10/2026  13:12:42           ",
+    "==========================================",
+    "DOCUMENTOS DEL DIA:",
+    "  Facturas:                              2",
+    "  Notas de credito:                      0",
+    "  Notas de debito:                       0",
+    "  No fiscales:                           0",
+    "------------------------------------------",
+    "VENTAS POR ALICUOTA:",
+    "  GENERAL 16%:                        1,29",
+    "    IVA:                              0,21",
+    "  REDUCIDA 8%:                       30,19",
+    "    IVA:                              2,41",
+    "------------------------------------------",
+    "FORMAS DE PAGO:",
+    "  (sin pagos registrados)",
+    "==========================================",
+    "TOTAL VENTAS:                        34,10",
+    "TOTAL IVA:                            2,62",
+    "==========================================",
+    "         ESTE REPORTE NO REINICIA         ",
+    "           LOS TOTALES DEL DIA            ",
+    "------------------------------------------",
+    "ULTIMA FACTURA:                   00000003",
+    "     * * * * * * * * * * * * * * * *      ",
+    "       SIMULADOR - NO VALOR FISCAL        "
+   ],
+   "meta": {
+    "number": 1,
+    "total_sales": 34.1,
+    "total_tax": 2.62
+   }
+  }
+ ],
+ "print_job_seq": 5,
+ "tax_rates": {
+  "additional": 30,
+  "general": 16,
+  "reduced": 8
+ },
+ "tax_type": 1,
+ "last_invoice_date": "2026-10-11T13:12:42-04:00",
+ "last_z_report_date": "2026-10-11T12:47:04-04:00"
+}
