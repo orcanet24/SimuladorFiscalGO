@@ -1,0 +1,1122 @@
+{
+ "saved_at": "2026-10-08T18:24:51.4091312-04:00",
+ "brand": "TFHKA",
+ "model": "TFHKA",
+ "command_count": 21,
+ "history": [
+  {
+   "seq": 1,
+   "ts": "2026-10-08T13:49:45.907",
+   "command": "!   2.000      3.90CAFE MOLIDO 500G",
+   "response": "0|Item|CAFE MOLIDO 500G|2.000|3.90|1.08|7.80",
+   "ok": true
+  },
+  {
+   "seq": 2,
+   "ts": "2026-10-08T13:49:45.914",
+   "command": "103card",
+   "response": "0|Descripcion pago",
+   "ok": true
+  },
+  {
+   "seq": 3,
+   "ts": "2026-10-08T13:49:45.916",
+   "command": "1009.02",
+   "response": "0|Pago: 9.02|Pendiente: -1.22",
+   "ok": true
+  },
+  {
+   "seq": 4,
+   "ts": "2026-10-08T13:49:45.920",
+   "command": "101",
+   "response": "0|Factura 1|Total: 7.80|Impreso:1",
+   "ok": true
+  },
+  {
+   "seq": 5,
+   "ts": "2026-10-08T13:49:45.926",
+   "command": "iR*J-50123456-1",
+   "response": "0|RIF registrado",
+   "ok": true
+  },
+  {
+   "seq": 6,
+   "ts": "2026-10-08T13:49:45.929",
+   "command": "iS*COMERCIAL EL COMUNERO, C.A.",
+   "response": "0|Nombre registrado",
+   "ok": true
+  },
+  {
+   "seq": 7,
+   "ts": "2026-10-08T13:49:45.931",
+   "command": "i01CALLE REAL DE CHACAO, NRO 15-23",
+   "response": "0|Direccion registrada",
+   "ok": true
+  },
+  {
+   "seq": 8,
+   "ts": "2026-10-08T13:49:45.937",
+   "command": "!   6.000      2.50ARROZ VENEZOLANO 1KG",
+   "response": "0|Item|ARROZ VENEZOLANO 1KG|6.000|2.50|2.07|15.00",
+   "ok": true
+  },
+  {
+   "seq": 9,
+   "ts": "2026-10-08T13:49:45.940",
+   "command": "!   3.000      4.90ACEITE VEGETAL 1L",
+   "response": "0|Item|ACEITE VEGETAL 1L|3.000|4.90|2.03|14.70",
+   "ok": true
+  },
+  {
+   "seq": 10,
+   "ts": "2026-10-08T13:49:45.948",
+   "command": "\"   2.000      7.50LECHE EN POLVO 1KG",
+   "response": "0|Item|LECHE EN POLVO 1KG|2.000|7.50|1.11|15.00",
+   "ok": true
+  },
+  {
+   "seq": 11,
+   "ts": "2026-10-08T13:49:45.952",
+   "command": "    4.000      1.20PAN CASERO",
+   "response": "ERROR|0x50|Comando desconocido",
+   "ok": false
+  },
+  {
+   "seq": 12,
+   "ts": "2026-10-08T13:49:45.955",
+   "command": "3",
+   "response": "0|Subtotal: 39.49 + 5.21 = 44.70",
+   "ok": true
+  },
+  {
+   "seq": 13,
+   "ts": "2026-10-08T13:49:45.963",
+   "command": "10066.35",
+   "response": "0|Pago: 66.35|Pendiente: -21.65",
+   "ok": true
+  },
+  {
+   "seq": 14,
+   "ts": "2026-10-08T13:49:52.774",
+   "command": "101",
+   "response": "0|Factura 2|Total: 44.70|Impreso:2",
+   "ok": true
+  },
+  {
+   "seq": 15,
+   "ts": "2026-10-08T13:49:55.031",
+   "command": "U0X",
+   "response": "0|Reporte X #1|Ventas: 52.50|IVA: 6.28|Impreso:3",
+   "ok": true
+  },
+  {
+   "seq": 16,
+   "ts": "2026-10-08T13:49:57.320",
+   "command": "U0Z",
+   "response": "0|Reporte Z #1|Ventas: 52.50|IVA: 6.28|Impreso:4",
+   "ok": true
+  },
+  {
+   "seq": 17,
+   "ts": "2026-10-08T18:24:26.956",
+   "command": "U0X",
+   "response": "0|Reporte X #2|Ventas: 0.00|IVA: 0.00|Impreso:5",
+   "ok": true
+  },
+  {
+   "seq": 18,
+   "ts": "2026-10-08T18:24:30.442",
+   "command": "U0X",
+   "response": "0|Reporte X #3|Ventas: 0.00|IVA: 0.00|Impreso:6",
+   "ok": true
+  },
+  {
+   "seq": 19,
+   "ts": "2026-10-08T18:24:31.897",
+   "command": "U0X",
+   "response": "0|Reporte X #4|Ventas: 0.00|IVA: 0.00|Impreso:7",
+   "ok": true
+  },
+  {
+   "seq": 20,
+   "ts": "2026-10-08T18:24:33.736",
+   "command": "U0X",
+   "response": "0|Reporte X #5|Ventas: 0.00|IVA: 0.00|Impreso:8",
+   "ok": true
+  },
+  {
+   "seq": 21,
+   "ts": "2026-10-08T18:24:51.409",
+   "command": "U0Z",
+   "response": "0|Reporte Z #2|Ventas: 0.00|IVA: 0.00|Impreso:9",
+   "ok": true
+  }
+ ],
+ "serial_number": "MLTFHKA001",
+ "fiscal_registration": "J-31055823-7",
+ "rif": "J-31055823-7",
+ "mode": "fiscal",
+ "memory_status": "ok",
+ "current_state": "waiting",
+ "fiscal_counter": 2,
+ "invoice_counter": 2,
+ "credit_note_counter": 0,
+ "debit_note_counter": 0,
+ "non_fiscal_counter": 0,
+ "z_report_counter": 2,
+ "x_report_counter": 5,
+ "daily_closure_counter": 2,
+ "total_sales": 52.5,
+ "total_tax": 6.283524904214559,
+ "total_discounts": 0,
+ "total_surcharges": 0,
+ "daily_sales": 0,
+ "daily_tax": 0,
+ "daily_discounts": 0,
+ "daily_surcharges": 0,
+ "daily_invoices": 0,
+ "daily_credit_notes": 0,
+ "daily_debit_notes": 0,
+ "daily_non_fiscal": 0,
+ "tax_totals": {
+  "additional": {
+   "base": 0,
+   "tax": 0
+  },
+  "exempt": {
+   "base": 0,
+   "tax": 0
+  },
+  "general": {
+   "base": 0,
+   "tax": 0
+  },
+  "reduced": {
+   "base": 0,
+   "tax": 0
+  }
+ },
+ "credit_note_totals": {
+  "additional": {
+   "base": 0,
+   "tax": 0
+  },
+  "exempt": {
+   "base": 0,
+   "tax": 0
+  },
+  "general": {
+   "base": 0,
+   "tax": 0
+  },
+  "reduced": {
+   "base": 0,
+   "tax": 0
+  }
+ },
+ "debit_note_totals": {
+  "additional": {
+   "base": 0,
+   "tax": 0
+  },
+  "exempt": {
+   "base": 0,
+   "tax": 0
+  },
+  "general": {
+   "base": 0,
+   "tax": 0
+  },
+  "reduced": {
+   "base": 0,
+   "tax": 0
+  }
+ },
+ "payment_totals": {},
+ "company": {
+  "rif": "J-31055823-7",
+  "razon_social": "DISTRIBUIDORA ANDELINA, C.A.",
+  "direccion": "AV. PRINCIPAL DE LAS MERCEDES, EDIF. TORRE AZUL, PISO 4, OFIC. 401",
+  "municipio": "CHACAO",
+  "ciudad": "CARACAS",
+  "estado": "DISTRITO CAPITAL",
+  "telefono": "0212-9512204",
+  "email": "ventas@andelina.com.ve",
+  "representante_legal": "MARIA ELENA RODRIGUEZ SUAREZ",
+  "cedula_representante": "V-10234567",
+  "actividad_economica": "COMERCIO AL POR MENOR DE PRODUCTOS ALIMENTICIOS Y BEBIDAS",
+  "nif": "",
+  "moneda": "Bs.",
+  "logo_text": "",
+  "condiciones_pago": "CONTADO / CRÉDITO",
+  "contribuyente_especial": true,
+  "agente_retencion": true
+ },
+ "headers": [
+  "DISTRIBUIDORA ANDELINA, C.A.",
+  "RIF: J-31055823-7",
+  "AV. PRINCIPAL DE LAS MERCEDES, EDIF. TOR",
+  "CHACAO - DISTRITO CAPITAL",
+  "TEL: 0212-9512204",
+  "REP. LEGAL: MARIA ELENA RODRIGUEZ SUAREZ",
+  "",
+  ""
+ ],
+ "footers": {
+  "footer1": "GRACIAS POR SU COMPRA"
+ },
+ "flags": {
+  "dont_open_drawer": false,
+  "paper_sensor_enabled": true,
+  "print_customer_data": false,
+  "print_logo": false,
+  "print_z_report_items": false,
+  "reduce_z_report": false
+ },
+ "document_open": false,
+ "document_type": "",
+ "current_items": [],
+ "subtotal_bases": 0,
+ "subtotal_tax": 0,
+ "amount_payable": 0,
+ "payments_made": 0,
+ "payment_count": 0,
+ "doc_payments": {},
+ "subtotal_printed": false,
+ "customer_rif": "",
+ "customer_name": "",
+ "customer_address": "",
+ "customer_phone": "",
+ "reference_invoice": "",
+ "reference_date": "",
+ "reference_serial": "",
+ "audit_memory_number": 1,
+ "audit_memory_total": 4,
+ "audit_memory_free": 3.498046875,
+ "audit_memory_used": 0.501953125,
+ "z_reports": [
+  {
+   "type": "Z",
+   "number": 1,
+   "timestamp": "2026-10-08T13:49:57.3205464-04:00",
+   "last_invoice": 2,
+   "last_credit_note": 0,
+   "last_debit_note": 0,
+   "total_sales": 52.5,
+   "total_tax": 6.283524904214559,
+   "daily_invoices": 2,
+   "daily_credit_notes": 0,
+   "daily_debit_notes": 0,
+   "daily_non_fiscal": 0,
+   "lifetime_sales": 52.5,
+   "lifetime_tax": 6.283524904214559,
+   "tax_totals": {
+    "additional": {
+     "base": 0,
+     "tax": 0
+    },
+    "exempt": {
+     "base": 0,
+     "tax": 0
+    },
+    "general": {
+     "base": 32.327586206896555,
+     "tax": 5.172413793103447
+    },
+    "reduced": {
+     "base": 13.888888888888888,
+     "tax": 1.1111111111111125
+    }
+   },
+   "credit_note_totals": {
+    "additional": {
+     "base": 0,
+     "tax": 0
+    },
+    "exempt": {
+     "base": 0,
+     "tax": 0
+    },
+    "general": {
+     "base": 0,
+     "tax": 0
+    },
+    "reduced": {
+     "base": 0,
+     "tax": 0
+    }
+   },
+   "debit_note_totals": {
+    "additional": {
+     "base": 0,
+     "tax": 0
+    },
+    "exempt": {
+     "base": 0,
+     "tax": 0
+    },
+    "general": {
+     "base": 0,
+     "tax": 0
+    },
+    "reduced": {
+     "base": 0,
+     "tax": 0
+    }
+   },
+   "payments": {
+    "card": 9.02,
+    "cash": 66.35
+   }
+  },
+  {
+   "type": "Z",
+   "number": 2,
+   "timestamp": "2026-10-08T18:24:51.4091312-04:00",
+   "last_invoice": 2,
+   "last_credit_note": 0,
+   "last_debit_note": 0,
+   "total_sales": 0,
+   "total_tax": 0,
+   "daily_invoices": 0,
+   "daily_credit_notes": 0,
+   "daily_debit_notes": 0,
+   "daily_non_fiscal": 0,
+   "lifetime_sales": 52.5,
+   "lifetime_tax": 6.283524904214559,
+   "tax_totals": {
+    "additional": {
+     "base": 0,
+     "tax": 0
+    },
+    "exempt": {
+     "base": 0,
+     "tax": 0
+    },
+    "general": {
+     "base": 0,
+     "tax": 0
+    },
+    "reduced": {
+     "base": 0,
+     "tax": 0
+    }
+   },
+   "credit_note_totals": {
+    "additional": {
+     "base": 0,
+     "tax": 0
+    },
+    "exempt": {
+     "base": 0,
+     "tax": 0
+    },
+    "general": {
+     "base": 0,
+     "tax": 0
+    },
+    "reduced": {
+     "base": 0,
+     "tax": 0
+    }
+   },
+   "debit_note_totals": {
+    "additional": {
+     "base": 0,
+     "tax": 0
+    },
+    "exempt": {
+     "base": 0,
+     "tax": 0
+    },
+    "general": {
+     "base": 0,
+     "tax": 0
+    },
+    "reduced": {
+     "base": 0,
+     "tax": 0
+    }
+   },
+   "payments": {}
+  }
+ ],
+ "x_reports": [
+  {
+   "type": "X",
+   "number": 1,
+   "timestamp": "2026-10-08T13:49:55.0299856-04:00",
+   "last_invoice": 2,
+   "last_credit_note": 0,
+   "last_debit_note": 0,
+   "total_sales": 52.5,
+   "total_tax": 6.283524904214559,
+   "daily_invoices": 2,
+   "daily_credit_notes": 0,
+   "daily_debit_notes": 0,
+   "daily_non_fiscal": 0,
+   "tax_totals": {
+    "additional": {
+     "base": 0,
+     "tax": 0
+    },
+    "exempt": {
+     "base": 0,
+     "tax": 0
+    },
+    "general": {
+     "base": 32.327586206896555,
+     "tax": 5.172413793103447
+    },
+    "reduced": {
+     "base": 13.888888888888888,
+     "tax": 1.1111111111111125
+    }
+   },
+   "payments": {
+    "card": 9.02,
+    "cash": 66.35
+   }
+  },
+  {
+   "type": "X",
+   "number": 2,
+   "timestamp": "2026-10-08T18:24:26.9566259-04:00",
+   "last_invoice": 2,
+   "last_credit_note": 0,
+   "last_debit_note": 0,
+   "total_sales": 0,
+   "total_tax": 0,
+   "daily_invoices": 0,
+   "daily_credit_notes": 0,
+   "daily_debit_notes": 0,
+   "daily_non_fiscal": 0,
+   "tax_totals": {
+    "additional": {
+     "base": 0,
+     "tax": 0
+    },
+    "exempt": {
+     "base": 0,
+     "tax": 0
+    },
+    "general": {
+     "base": 0,
+     "tax": 0
+    },
+    "reduced": {
+     "base": 0,
+     "tax": 0
+    }
+   },
+   "payments": {}
+  },
+  {
+   "type": "X",
+   "number": 3,
+   "timestamp": "2026-10-08T18:24:30.442211-04:00",
+   "last_invoice": 2,
+   "last_credit_note": 0,
+   "last_debit_note": 0,
+   "total_sales": 0,
+   "total_tax": 0,
+   "daily_invoices": 0,
+   "daily_credit_notes": 0,
+   "daily_debit_notes": 0,
+   "daily_non_fiscal": 0,
+   "tax_totals": {
+    "additional": {
+     "base": 0,
+     "tax": 0
+    },
+    "exempt": {
+     "base": 0,
+     "tax": 0
+    },
+    "general": {
+     "base": 0,
+     "tax": 0
+    },
+    "reduced": {
+     "base": 0,
+     "tax": 0
+    }
+   },
+   "payments": {}
+  },
+  {
+   "type": "X",
+   "number": 4,
+   "timestamp": "2026-10-08T18:24:31.89799-04:00",
+   "last_invoice": 2,
+   "last_credit_note": 0,
+   "last_debit_note": 0,
+   "total_sales": 0,
+   "total_tax": 0,
+   "daily_invoices": 0,
+   "daily_credit_notes": 0,
+   "daily_debit_notes": 0,
+   "daily_non_fiscal": 0,
+   "tax_totals": {
+    "additional": {
+     "base": 0,
+     "tax": 0
+    },
+    "exempt": {
+     "base": 0,
+     "tax": 0
+    },
+    "general": {
+     "base": 0,
+     "tax": 0
+    },
+    "reduced": {
+     "base": 0,
+     "tax": 0
+    }
+   },
+   "payments": {}
+  },
+  {
+   "type": "X",
+   "number": 5,
+   "timestamp": "2026-10-08T18:24:33.7366388-04:00",
+   "last_invoice": 2,
+   "last_credit_note": 0,
+   "last_debit_note": 0,
+   "total_sales": 0,
+   "total_tax": 0,
+   "daily_invoices": 0,
+   "daily_credit_notes": 0,
+   "daily_debit_notes": 0,
+   "daily_non_fiscal": 0,
+   "tax_totals": {
+    "additional": {
+     "base": 0,
+     "tax": 0
+    },
+    "exempt": {
+     "base": 0,
+     "tax": 0
+    },
+    "general": {
+     "base": 0,
+     "tax": 0
+    },
+    "reduced": {
+     "base": 0,
+     "tax": 0
+    }
+   },
+   "payments": {}
+  }
+ ],
+ "print_jobs": [
+  {
+   "id": 1,
+   "kind": "receipt",
+   "title": "FACTURA FISCAL N° 00000001",
+   "ts": "2026-10-08T13:49:45",
+   "brand": "TFHKA",
+   "lines": [
+    "       DISTRIBUIDORA ANDELINA, C.A.       ",
+    "            RIF: J-31055823-7             ",
+    "   AV. PRINCIPAL DE LAS MERCEDES, EDIF.   ",
+    "      TORRE AZUL, PISO 4, OFIC. 401       ",
+    "   CHACAO - CARACAS - DISTRITO CAPITAL    ",
+    "            Telf: 0212-9512204            ",
+    " Rep. Legal: MARIA ELENA RODRIGUEZ SUAREZ ",
+    "            - C.I. V-10234567             ",
+    "   Actividad: COMERCIO AL POR MENOR DE    ",
+    "     PRODUCTOS ALIMENTICIOS Y BEBIDAS     ",
+    "          CONTRIBUYENTE ESPECIAL          ",
+    "         AGENTE DE RETENCION IVA          ",
+    "==========================================",
+    "              FACTURA FISCAL              ",
+    "               N° 00000001                ",
+    "           08/10/2026  13:49:45           ",
+    "==========================================",
+    "CLIENTE:",
+    "  CONSUMIDOR FINAL",
+    "------------------------------------------",
+    "   CANT DESCRIPCION          PREC  IVA   IMPORTE",
+    "------------------------------------------",
+    "  2.000 CAFE MOLIDO 500G     3.90  G16      7.80",
+    "------------------------------------------",
+    "SUBTOTAL:                             7,80",
+    "  BASE IVA 16%:                       6,72",
+    "  IVA 16%:                            1,08",
+    "==========================================",
+    "TOTAL Bs.:                            7,80",
+    "==========================================",
+    "TARJETA:                              9,02",
+    "CAMBIO:                               1,22",
+    "------------------------------------------",
+    "  SON: SIETE CON 80/100",
+    "------------------------------------------",
+    "MAQUINA:                        MLTFHKA001",
+    "RIF MAQ.:                     J-31055823-7",
+    "COND. PAGO:              CONTADO / CRÉDITO",
+    "        ART. 63 Ley IVA - Ley Org.        ",
+    "     Simplificacion y Racionalizacion     ",
+    "          del Proceso Tributario          ",
+    "------------------------------------------",
+    "          GRACIAS POR SU COMPRA           ",
+    "     * * * * * * * * * * * * * * * *      ",
+    "         DOCUMENTO FISCAL DIGITAL         ",
+    "       SIMULADOR - NO VALOR FISCAL        "
+   ],
+   "meta": {
+    "number": 1,
+    "total": 7.8,
+    "doc_type": "invoice"
+   }
+  },
+  {
+   "id": 2,
+   "kind": "receipt",
+   "title": "FACTURA FISCAL N° 00000002",
+   "ts": "2026-10-08T13:49:52",
+   "brand": "TFHKA",
+   "lines": [
+    "       DISTRIBUIDORA ANDELINA, C.A.       ",
+    "            RIF: J-31055823-7             ",
+    "   AV. PRINCIPAL DE LAS MERCEDES, EDIF.   ",
+    "      TORRE AZUL, PISO 4, OFIC. 401       ",
+    "   CHACAO - CARACAS - DISTRITO CAPITAL    ",
+    "            Telf: 0212-9512204            ",
+    " Rep. Legal: MARIA ELENA RODRIGUEZ SUAREZ ",
+    "            - C.I. V-10234567             ",
+    "   Actividad: COMERCIO AL POR MENOR DE    ",
+    "     PRODUCTOS ALIMENTICIOS Y BEBIDAS     ",
+    "          CONTRIBUYENTE ESPECIAL          ",
+    "         AGENTE DE RETENCION IVA          ",
+    "==========================================",
+    "              FACTURA FISCAL              ",
+    "               N° 00000002                ",
+    "           08/10/2026  13:49:52           ",
+    "==========================================",
+    "CLIENTE:",
+    "  RIF/C.I: J-50123456-1",
+    "COMERCIAL EL COMUNERO, C.A.",
+    "CALLE REAL DE CHACAO, NRO 15-23",
+    "------------------------------------------",
+    "   CANT DESCRIPCION          PREC  IVA   IMPORTE",
+    "------------------------------------------",
+    "  6.000 ARROZ VENEZOLANO     2.50  G16     15.00",
+    "  3.000 ACEITE VEGETAL 1L    4.90  G16     14.70",
+    "  2.000 LECHE EN POLVO 1K    7.50   R8     15.00",
+    "------------------------------------------",
+    "SUBTOTAL:                            44,70",
+    "  BASE IVA 16%:                      25,60",
+    "  IVA 16%:                            4,10",
+    "  BASE IVA 8%:                       13,89",
+    "  IVA 8%:                             1,11",
+    "==========================================",
+    "TOTAL Bs.:                           44,70",
+    "==========================================",
+    "EFECTIVO:                            66,35",
+    "CAMBIO:                              21,65",
+    "------------------------------------------",
+    "  SON: CUARENTA Y CUATRO CON 70/100",
+    "------------------------------------------",
+    "MAQUINA:                        MLTFHKA001",
+    "RIF MAQ.:                     J-31055823-7",
+    "COND. PAGO:              CONTADO / CRÉDITO",
+    "        ART. 63 Ley IVA - Ley Org.        ",
+    "     Simplificacion y Racionalizacion     ",
+    "          del Proceso Tributario          ",
+    "------------------------------------------",
+    "          GRACIAS POR SU COMPRA           ",
+    "     * * * * * * * * * * * * * * * *      ",
+    "         DOCUMENTO FISCAL DIGITAL         ",
+    "       SIMULADOR - NO VALOR FISCAL        "
+   ],
+   "meta": {
+    "number": 2,
+    "total": 44.7,
+    "doc_type": "invoice"
+   }
+  },
+  {
+   "id": 3,
+   "kind": "x_report",
+   "title": "REPORTE X N° 0001",
+   "ts": "2026-10-08T13:49:55",
+   "brand": "TFHKA",
+   "lines": [
+    "       DISTRIBUIDORA ANDELINA, C.A.       ",
+    "            RIF: J-31055823-7             ",
+    "   AV. PRINCIPAL DE LAS MERCEDES, EDIF.   ",
+    "      TORRE AZUL, PISO 4, OFIC. 401       ",
+    "   CHACAO - CARACAS - DISTRITO CAPITAL    ",
+    "            Telf: 0212-9512204            ",
+    " Rep. Legal: MARIA ELENA RODRIGUEZ SUAREZ ",
+    "            - C.I. V-10234567             ",
+    "   Actividad: COMERCIO AL POR MENOR DE    ",
+    "     PRODUCTOS ALIMENTICIOS Y BEBIDAS     ",
+    "          CONTRIBUYENTE ESPECIAL          ",
+    "         AGENTE DE RETENCION IVA          ",
+    "==========================================",
+    "        REPORTE X - CORTE DE CAJA         ",
+    "             REPORTE N° 0001              ",
+    "           08/10/2026  13:49:55           ",
+    "==========================================",
+    "DOCUMENTOS DEL DIA:",
+    "  Facturas:                              2",
+    "  Notas de credito:                      0",
+    "  Notas de debito:                       0",
+    "  No fiscales:                           0",
+    "------------------------------------------",
+    "VENTAS POR ALICUOTA:",
+    "  GENERAL 16%:                       32,33",
+    "    IVA:                              5,17",
+    "  REDUCIDA 8%:                       13,89",
+    "    IVA:                              1,11",
+    "------------------------------------------",
+    "FORMAS DE PAGO:",
+    "  TARJETA:                            9,02",
+    "  EFECTIVO:                          66,35",
+    "==========================================",
+    "TOTAL VENTAS:                        52,50",
+    "TOTAL IVA:                            6,28",
+    "==========================================",
+    "         ESTE REPORTE NO REINICIA         ",
+    "           LOS TOTALES DEL DIA            ",
+    "------------------------------------------",
+    "ULTIMA FACTURA:                   00000002",
+    "     * * * * * * * * * * * * * * * *      ",
+    "       SIMULADOR - NO VALOR FISCAL        "
+   ],
+   "meta": {
+    "number": 1,
+    "total_sales": 52.5,
+    "total_tax": 6.28
+   }
+  },
+  {
+   "id": 4,
+   "kind": "z_report",
+   "title": "REPORTE Z N° 0001",
+   "ts": "2026-10-08T13:49:57",
+   "brand": "TFHKA",
+   "lines": [
+    "       DISTRIBUIDORA ANDELINA, C.A.       ",
+    "            RIF: J-31055823-7             ",
+    "   AV. PRINCIPAL DE LAS MERCEDES, EDIF.   ",
+    "      TORRE AZUL, PISO 4, OFIC. 401       ",
+    "   CHACAO - CARACAS - DISTRITO CAPITAL    ",
+    "            Telf: 0212-9512204            ",
+    " Rep. Legal: MARIA ELENA RODRIGUEZ SUAREZ ",
+    "            - C.I. V-10234567             ",
+    "   Actividad: COMERCIO AL POR MENOR DE    ",
+    "     PRODUCTOS ALIMENTICIOS Y BEBIDAS     ",
+    "          CONTRIBUYENTE ESPECIAL          ",
+    "         AGENTE DE RETENCION IVA          ",
+    "==========================================",
+    "        REPORTE Z - CIERRE DIARIO         ",
+    "             REPORTE N° 0001              ",
+    "           08/10/2026  13:49:57           ",
+    "==========================================",
+    "DOCUMENTOS DEL DIA:",
+    "  Facturas:                              2",
+    "  Notas de credito:                      0",
+    "  Notas de debito:                       0",
+    "  No fiscales:                           0",
+    "------------------------------------------",
+    "VENTAS POR ALICUOTA:",
+    "  GENERAL 16%:                       32,33",
+    "    IVA:                              5,17",
+    "  REDUCIDA 8%:                       13,89",
+    "    IVA:                              1,11",
+    "------------------------------------------",
+    "FORMAS DE PAGO:",
+    "  TARJETA:                            9,02",
+    "  EFECTIVO:                          66,35",
+    "==========================================",
+    "TOTAL VENTAS:                        52,50",
+    "TOTAL IVA:                            6,28",
+    "==========================================",
+    "              CIERRE DEL DIA              ",
+    "         TOTALES REINICIADOS TRAS         ",
+    "               ESTE REPORTE               ",
+    "------------------------------------------",
+    "ULTIMA FACTURA:                   00000002",
+    "CIERRES DIARIOS:                         1",
+    "     * * * * * * * * * * * * * * * *      ",
+    "       SIMULADOR - NO VALOR FISCAL        "
+   ],
+   "meta": {
+    "number": 1,
+    "total_sales": 52.5,
+    "total_tax": 6.28
+   }
+  },
+  {
+   "id": 5,
+   "kind": "x_report",
+   "title": "REPORTE X N° 0002",
+   "ts": "2026-10-08T18:24:26",
+   "brand": "TFHKA",
+   "lines": [
+    "       DISTRIBUIDORA ANDELINA, C.A.       ",
+    "            RIF: J-31055823-7             ",
+    "   AV. PRINCIPAL DE LAS MERCEDES, EDIF.   ",
+    "      TORRE AZUL, PISO 4, OFIC. 401       ",
+    "   CHACAO - CARACAS - DISTRITO CAPITAL    ",
+    "            Telf: 0212-9512204            ",
+    " Rep. Legal: MARIA ELENA RODRIGUEZ SUAREZ ",
+    "            - C.I. V-10234567             ",
+    "   Actividad: COMERCIO AL POR MENOR DE    ",
+    "     PRODUCTOS ALIMENTICIOS Y BEBIDAS     ",
+    "          CONTRIBUYENTE ESPECIAL          ",
+    "         AGENTE DE RETENCION IVA          ",
+    "==========================================",
+    "        REPORTE X - CORTE DE CAJA         ",
+    "             REPORTE N° 0002              ",
+    "           08/10/2026  18:24:26           ",
+    "==========================================",
+    "DOCUMENTOS DEL DIA:",
+    "  Facturas:                              0",
+    "  Notas de credito:                      0",
+    "  Notas de debito:                       0",
+    "  No fiscales:                           0",
+    "------------------------------------------",
+    "VENTAS POR ALICUOTA:",
+    "------------------------------------------",
+    "FORMAS DE PAGO:",
+    "  (sin pagos registrados)",
+    "==========================================",
+    "TOTAL VENTAS:                         0,00",
+    "TOTAL IVA:                            0,00",
+    "==========================================",
+    "         ESTE REPORTE NO REINICIA         ",
+    "           LOS TOTALES DEL DIA            ",
+    "------------------------------------------",
+    "ULTIMA FACTURA:                   00000002",
+    "     * * * * * * * * * * * * * * * *      ",
+    "       SIMULADOR - NO VALOR FISCAL        "
+   ],
+   "meta": {
+    "number": 2,
+    "total_sales": 0.0,
+    "total_tax": 0.0
+   }
+  },
+  {
+   "id": 6,
+   "kind": "x_report",
+   "title": "REPORTE X N° 0003",
+   "ts": "2026-10-08T18:24:30",
+   "brand": "TFHKA",
+   "lines": [
+    "       DISTRIBUIDORA ANDELINA, C.A.       ",
+    "            RIF: J-31055823-7             ",
+    "   AV. PRINCIPAL DE LAS MERCEDES, EDIF.   ",
+    "      TORRE AZUL, PISO 4, OFIC. 401       ",
+    "   CHACAO - CARACAS - DISTRITO CAPITAL    ",
+    "            Telf: 0212-9512204            ",
+    " Rep. Legal: MARIA ELENA RODRIGUEZ SUAREZ ",
+    "            - C.I. V-10234567             ",
+    "   Actividad: COMERCIO AL POR MENOR DE    ",
+    "     PRODUCTOS ALIMENTICIOS Y BEBIDAS     ",
+    "          CONTRIBUYENTE ESPECIAL          ",
+    "         AGENTE DE RETENCION IVA          ",
+    "==========================================",
+    "        REPORTE X - CORTE DE CAJA         ",
+    "             REPORTE N° 0003              ",
+    "           08/10/2026  18:24:30           ",
+    "==========================================",
+    "DOCUMENTOS DEL DIA:",
+    "  Facturas:                              0",
+    "  Notas de credito:                      0",
+    "  Notas de debito:                       0",
+    "  No fiscales:                           0",
+    "------------------------------------------",
+    "VENTAS POR ALICUOTA:",
+    "------------------------------------------",
+    "FORMAS DE PAGO:",
+    "  (sin pagos registrados)",
+    "==========================================",
+    "TOTAL VENTAS:                         0,00",
+    "TOTAL IVA:                            0,00",
+    "==========================================",
+    "         ESTE REPORTE NO REINICIA         ",
+    "           LOS TOTALES DEL DIA            ",
+    "------------------------------------------",
+    "ULTIMA FACTURA:                   00000002",
+    "     * * * * * * * * * * * * * * * *      ",
+    "       SIMULADOR - NO VALOR FISCAL        "
+   ],
+   "meta": {
+    "number": 3,
+    "total_sales": 0.0,
+    "total_tax": 0.0
+   }
+  },
+  {
+   "id": 7,
+   "kind": "x_report",
+   "title": "REPORTE X N° 0004",
+   "ts": "2026-10-08T18:24:31",
+   "brand": "TFHKA",
+   "lines": [
+    "       DISTRIBUIDORA ANDELINA, C.A.       ",
+    "            RIF: J-31055823-7             ",
+    "   AV. PRINCIPAL DE LAS MERCEDES, EDIF.   ",
+    "      TORRE AZUL, PISO 4, OFIC. 401       ",
+    "   CHACAO - CARACAS - DISTRITO CAPITAL    ",
+    "            Telf: 0212-9512204            ",
+    " Rep. Legal: MARIA ELENA RODRIGUEZ SUAREZ ",
+    "            - C.I. V-10234567             ",
+    "   Actividad: COMERCIO AL POR MENOR DE    ",
+    "     PRODUCTOS ALIMENTICIOS Y BEBIDAS     ",
+    "          CONTRIBUYENTE ESPECIAL          ",
+    "         AGENTE DE RETENCION IVA          ",
+    "==========================================",
+    "        REPORTE X - CORTE DE CAJA         ",
+    "             REPORTE N° 0004              ",
+    "           08/10/2026  18:24:31           ",
+    "==========================================",
+    "DOCUMENTOS DEL DIA:",
+    "  Facturas:                              0",
+    "  Notas de credito:                      0",
+    "  Notas de debito:                       0",
+    "  No fiscales:                           0",
+    "------------------------------------------",
+    "VENTAS POR ALICUOTA:",
+    "------------------------------------------",
+    "FORMAS DE PAGO:",
+    "  (sin pagos registrados)",
+    "==========================================",
+    "TOTAL VENTAS:                         0,00",
+    "TOTAL IVA:                            0,00",
+    "==========================================",
+    "         ESTE REPORTE NO REINICIA         ",
+    "           LOS TOTALES DEL DIA            ",
+    "------------------------------------------",
+    "ULTIMA FACTURA:                   00000002",
+    "     * * * * * * * * * * * * * * * *      ",
+    "       SIMULADOR - NO VALOR FISCAL        "
+   ],
+   "meta": {
+    "number": 4,
+    "total_sales": 0.0,
+    "total_tax": 0.0
+   }
+  },
+  {
+   "id": 8,
+   "kind": "x_report",
+   "title": "REPORTE X N° 0005",
+   "ts": "2026-10-08T18:24:33",
+   "brand": "TFHKA",
+   "lines": [
+    "       DISTRIBUIDORA ANDELINA, C.A.       ",
+    "            RIF: J-31055823-7             ",
+    "   AV. PRINCIPAL DE LAS MERCEDES, EDIF.   ",
+    "      TORRE AZUL, PISO 4, OFIC. 401       ",
+    "   CHACAO - CARACAS - DISTRITO CAPITAL    ",
+    "            Telf: 0212-9512204            ",
+    " Rep. Legal: MARIA ELENA RODRIGUEZ SUAREZ ",
+    "            - C.I. V-10234567             ",
+    "   Actividad: COMERCIO AL POR MENOR DE    ",
+    "     PRODUCTOS ALIMENTICIOS Y BEBIDAS     ",
+    "          CONTRIBUYENTE ESPECIAL          ",
+    "         AGENTE DE RETENCION IVA          ",
+    "==========================================",
+    "        REPORTE X - CORTE DE CAJA         ",
+    "             REPORTE N° 0005              ",
+    "           08/10/2026  18:24:33           ",
+    "==========================================",
+    "DOCUMENTOS DEL DIA:",
+    "  Facturas:                              0",
+    "  Notas de credito:                      0",
+    "  Notas de debito:                       0",
+    "  No fiscales:                           0",
+    "------------------------------------------",
+    "VENTAS POR ALICUOTA:",
+    "------------------------------------------",
+    "FORMAS DE PAGO:",
+    "  (sin pagos registrados)",
+    "==========================================",
+    "TOTAL VENTAS:                         0,00",
+    "TOTAL IVA:                            0,00",
+    "==========================================",
+    "         ESTE REPORTE NO REINICIA         ",
+    "           LOS TOTALES DEL DIA            ",
+    "------------------------------------------",
+    "ULTIMA FACTURA:                   00000002",
+    "     * * * * * * * * * * * * * * * *      ",
+    "       SIMULADOR - NO VALOR FISCAL        "
+   ],
+   "meta": {
+    "number": 5,
+    "total_sales": 0.0,
+    "total_tax": 0.0
+   }
+  },
+  {
+   "id": 9,
+   "kind": "z_report",
+   "title": "REPORTE Z N° 0002",
+   "ts": "2026-10-08T18:24:51",
+   "brand": "TFHKA",
+   "lines": [
+    "       DISTRIBUIDORA ANDELINA, C.A.       ",
+    "            RIF: J-31055823-7             ",
+    "   AV. PRINCIPAL DE LAS MERCEDES, EDIF.   ",
+    "      TORRE AZUL, PISO 4, OFIC. 401       ",
+    "   CHACAO - CARACAS - DISTRITO CAPITAL    ",
+    "            Telf: 0212-9512204            ",
+    " Rep. Legal: MARIA ELENA RODRIGUEZ SUAREZ ",
+    "            - C.I. V-10234567             ",
+    "   Actividad: COMERCIO AL POR MENOR DE    ",
+    "     PRODUCTOS ALIMENTICIOS Y BEBIDAS     ",
+    "          CONTRIBUYENTE ESPECIAL          ",
+    "         AGENTE DE RETENCION IVA          ",
+    "==========================================",
+    "        REPORTE Z - CIERRE DIARIO         ",
+    "             REPORTE N° 0002              ",
+    "           08/10/2026  18:24:51           ",
+    "==========================================",
+    "DOCUMENTOS DEL DIA:",
+    "  Facturas:                              0",
+    "  Notas de credito:                      0",
+    "  Notas de debito:                       0",
+    "  No fiscales:                           0",
+    "------------------------------------------",
+    "VENTAS POR ALICUOTA:",
+    "------------------------------------------",
+    "FORMAS DE PAGO:",
+    "  (sin pagos registrados)",
+    "==========================================",
+    "TOTAL VENTAS:                         0,00",
+    "TOTAL IVA:                            0,00",
+    "==========================================",
+    "              CIERRE DEL DIA              ",
+    "         TOTALES REINICIADOS TRAS         ",
+    "               ESTE REPORTE               ",
+    "------------------------------------------",
+    "ULTIMA FACTURA:                   00000002",
+    "CIERRES DIARIOS:                         2",
+    "     * * * * * * * * * * * * * * * *      ",
+    "       SIMULADOR - NO VALOR FISCAL        "
+   ],
+   "meta": {
+    "number": 2,
+    "total_sales": 0.0,
+    "total_tax": 0.0
+   }
+  }
+ ],
+ "print_job_seq": 9,
+ "tax_rates": {
+  "additional": 30,
+  "general": 16,
+  "reduced": 8
+ },
+ "tax_type": 1,
+ "last_invoice_date": "2026-10-08T13:49:52-04:00",
+ "last_z_report_date": "2026-10-08T18:24:51-04:00"
+}
