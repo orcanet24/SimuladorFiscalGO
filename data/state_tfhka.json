@@ -1,8 +1,8 @@
 {
- "saved_at": "2026-10-08T18:24:51.4091312-04:00",
+ "saved_at": "2026-11-15T18:32:54.6086576-04:00",
  "brand": "TFHKA",
  "model": "TFHKA",
- "command_count": 21,
+ "command_count": 24,
  "history": [
   {
    "seq": 1,
@@ -150,6 +150,27 @@
    "command": "U0Z",
    "response": "0|Reporte Z #2|Ventas: 0.00|IVA: 0.00|Impreso:9",
    "ok": true
+  },
+  {
+   "seq": 22,
+   "ts": "2026-11-15T18:32:50.652",
+   "command": "S1",
+   "response": "0|MLTFHKA001|J-31055823-7|2|2|2|0|0|0|0.00|2026-11-15 18:32:50",
+   "ok": true
+  },
+  {
+   "seq": 23,
+   "ts": "2026-11-15T18:32:54.555",
+   "command": "!   1.000     10.00CAFE",
+   "response": "0|Item|CAFE|1.000|10.00|1.38|10.00",
+   "ok": true
+  },
+  {
+   "seq": 24,
+   "ts": "2026-11-15T18:32:54.608",
+   "command": "101",
+   "response": "0|Factura 3|Total: 10.00|Impreso:10",
+   "ok": true
   }
  ],
  "serial_number": "MLTFHKA001",
@@ -158,23 +179,23 @@
  "mode": "fiscal",
  "memory_status": "ok",
  "current_state": "waiting",
- "fiscal_counter": 2,
- "invoice_counter": 2,
+ "fiscal_counter": 3,
+ "invoice_counter": 3,
  "credit_note_counter": 0,
  "debit_note_counter": 0,
  "non_fiscal_counter": 0,
  "z_report_counter": 2,
  "x_report_counter": 5,
  "daily_closure_counter": 2,
- "total_sales": 52.5,
- "total_tax": 6.283524904214559,
+ "total_sales": 62.5,
+ "total_tax": 7.6628352490421445,
  "total_discounts": 0,
  "total_surcharges": 0,
- "daily_sales": 0,
- "daily_tax": 0,
+ "daily_sales": 10,
+ "daily_tax": 1.3793103448275854,
  "daily_discounts": 0,
  "daily_surcharges": 0,
- "daily_invoices": 0,
+ "daily_invoices": 1,
  "daily_credit_notes": 0,
  "daily_debit_notes": 0,
  "daily_non_fiscal": 0,
@@ -188,8 +209,8 @@
    "tax": 0
   },
   "general": {
-   "base": 0,
-   "tax": 0
+   "base": 8.620689655172415,
+   "tax": 1.3793103448275854
   },
   "reduced": {
    "base": 0,
@@ -292,8 +313,8 @@
  "reference_serial": "",
  "audit_memory_number": 1,
  "audit_memory_total": 4,
- "audit_memory_free": 3.498046875,
- "audit_memory_used": 0.501953125,
+ "audit_memory_free": 3.4970703125,
+ "audit_memory_used": 0.5029296875,
  "z_reports": [
   {
    "type": "Z",
@@ -1108,15 +1129,73 @@
     "total_sales": 0.0,
     "total_tax": 0.0
    }
+  },
+  {
+   "id": 10,
+   "kind": "receipt",
+   "title": "FACTURA FISCAL N° 00000003",
+   "ts": "2026-11-15T18:32:54",
+   "brand": "TFHKA",
+   "lines": [
+    "       DISTRIBUIDORA ANDELINA, C.A.       ",
+    "            RIF: J-31055823-7             ",
+    "   AV. PRINCIPAL DE LAS MERCEDES, EDIF.   ",
+    "      TORRE AZUL, PISO 4, OFIC. 401       ",
+    "   CHACAO - CARACAS - DISTRITO CAPITAL    ",
+    "            Telf: 0212-9512204            ",
+    " Rep. Legal: MARIA ELENA RODRIGUEZ SUAREZ ",
+    "            - C.I. V-10234567             ",
+    "   Actividad: COMERCIO AL POR MENOR DE    ",
+    "     PRODUCTOS ALIMENTICIOS Y BEBIDAS     ",
+    "          CONTRIBUYENTE ESPECIAL          ",
+    "         AGENTE DE RETENCION IVA          ",
+    "==========================================",
+    "              FACTURA FISCAL              ",
+    "               N° 00000003                ",
+    "           15/11/2026  18:32:54           ",
+    "==========================================",
+    "CLIENTE:",
+    "  CONSUMIDOR FINAL",
+    "------------------------------------------",
+    "   CANT DESCRIPCION          PREC  IVA   IMPORTE",
+    "------------------------------------------",
+    "  1.000 CAFE                10.00  G16     10.00",
+    "------------------------------------------",
+    "SUBTOTAL:                            10,00",
+    "  BASE IVA 16%:                       8,62",
+    "  IVA 16%:                            1,38",
+    "==========================================",
+    "TOTAL Bs.:                           10,00",
+    "==========================================",
+    "------------------------------------------",
+    "  SON: DIEZ CON 00/100",
+    "------------------------------------------",
+    "MAQUINA:                        MLTFHKA001",
+    "RIF MAQ.:                     J-31055823-7",
+    "COND. PAGO:              CONTADO / CRÉDITO",
+    "        ART. 63 Ley IVA - Ley Org.        ",
+    "     Simplificacion y Racionalizacion     ",
+    "          del Proceso Tributario          ",
+    "------------------------------------------",
+    "          GRACIAS POR SU COMPRA           ",
+    "     * * * * * * * * * * * * * * * *      ",
+    "         DOCUMENTO FISCAL DIGITAL         ",
+    "       SIMULADOR - NO VALOR FISCAL        "
+   ],
+   "meta": {
+    "number": 3,
+    "total": 10.0,
+    "doc_type": "invoice"
+   }
   }
  ],
- "print_job_seq": 9,
+ "print_job_seq": 10,
  "tax_rates": {
   "additional": 30,
   "general": 16,
   "reduced": 8
  },
  "tax_type": 1,
- "last_invoice_date": "2026-10-08T13:49:52-04:00",
+ "last_invoice_date": "2026-11-15T18:32:54-04:00",
  "last_z_report_date": "2026-10-08T18:24:51-04:00"
 }

@@ -27,21 +27,26 @@ set "ADDR=%~2"
 if "%ADDR%"=="" set "ADDR=127.0.0.1:2011"
 set "DATA_DIR=data_serve"
 
-rem --- compilar si hay Go (si no, usa el binario existente) ---
+rem --- compilar solo si falta el binario (si ya existe, se usa el actual;
+rem     recompilar con el simulador corriendo falla por el archivo en uso) ---
+set "NEED_BUILD=0"
+if not exist "%~dp0simuladorfiscal.exe" set "NEED_BUILD=1"
 where go >nul 2>nul
 if errorlevel 1 (
-    if not exist "%~dp0simuladorfiscal.exe" (
+    if "!NEED_BUILD!"=="1" (
         echo [ERROR] No hay Go en el PATH ni simuladorfiscal.exe compilado.
         pause
         exit /b 1
     )
 ) else (
-    echo Compilando simuladorfiscal.exe ...
-    go build -o "%~dp0simuladorfiscal.exe" ./cmd/simuladorfiscal
-    if errorlevel 1 (
-        echo [ERROR] Fallo la compilacion.
-        pause
-        exit /b 1
+    if "!NEED_BUILD!"=="1" (
+        echo Compilando simuladorfiscal.exe ...
+        go build -o "%~dp0simuladorfiscal.exe" ./cmd/simuladorfiscal
+        if errorlevel 1 (
+            echo [ERROR] Fallo la compilacion.
+            pause
+            exit /b 1
+        )
     )
 )
 
